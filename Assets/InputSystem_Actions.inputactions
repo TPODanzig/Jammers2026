@@ -507,7 +507,7 @@
                     "name": "",
                     "id": "1261e663-d9e2-4116-b0a7-fef76d653e59",
                     "path": "<Keyboard>/b",
-                    "interactions": "Hold(duration=7,pressPoint=0.5)",
+                    "interactions": "Hold(duration=3,pressPoint=0.5)",
                     "processors": "",
                     "groups": "",
                     "action": "blacklight",
