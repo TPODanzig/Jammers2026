@@ -27,7 +27,7 @@ public class PlayerMaskManager : MonoBehaviour
     {
         //check of je 1,2,3 of L mouse klikt
 
-        if (Input.GetKeyDown("1") && SMaskAmount >= 1)
+        if (Input.GetKey("1") && SMaskAmount >= 1 && SActiveMask != ActiveMask.BlackLight)
         {
             if (SWearingMask)
             {
@@ -38,7 +38,7 @@ public class PlayerMaskManager : MonoBehaviour
                 SActiveMask = ActiveMask.BlackLight;
             }
         }
-        else if (Input.GetKeyDown("2") && SMaskAmount >= 2)
+        else if (Input.GetKey("2") && SMaskAmount >= 2 && SActiveMask != ActiveMask.Disguise)
         {
             if (SWearingMask)
             {
@@ -49,7 +49,7 @@ public class PlayerMaskManager : MonoBehaviour
                 SActiveMask = ActiveMask.Disguise;
             }
         }
-        else if (Input.GetKeyDown("3") && SMaskAmount >= 3)
+        else if (Input.GetKey("3") && SMaskAmount >= 3 && SActiveMask != ActiveMask.Disguise)
         {
             if (SWearingMask)
             {
