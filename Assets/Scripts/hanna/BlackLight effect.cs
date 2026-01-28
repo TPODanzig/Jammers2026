@@ -30,6 +30,7 @@ public class BlackLighteffect : MonoBehaviour
     }
     void MaskActive(InputAction.CallbackContext ctx) 
     {
+        
         Volume.SetActive(true);
     } 
 }
