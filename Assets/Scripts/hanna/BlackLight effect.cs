@@ -1,17 +1,36 @@
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
+using UnityEngine.UI;
 
 public class BlackLighteffect : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public  GameObject Volume;
+   public InputActionReference blacklight;
+    public Image Fill;
+
+    private void Update()
     {
-        
+        if (blacklight != null) 
+        {
+            Fill.fillAmount = blacklight.action.GetTimeoutCompletionPercentage();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnEnable()
+    {
+        blacklight.action.performed += MaskActive;
+
+    }
+    private void OnDisable()
+    {
+        blacklight.action.performed -= MaskActive;
+
+    }
+    void MaskActive(InputAction.CallbackContext ctx) 
     {
         
-    }
+        Volume.SetActive(true);
+    } 
 }

@@ -55,7 +55,7 @@
                     "name": "Jump",
                     "type": "Button",
                     "id": "f1ba0d36-48eb-4cd5-b651-1c94a6531f70",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -91,6 +91,15 @@
                     "name": "Xray",
                     "type": "Button",
                     "id": "8e77b5db-45ec-42f1-81c4-49bb0c2ffd23",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "blacklight",
+                    "type": "Button",
+                    "id": "326d8175-fe0a-4f9c-97a7-d8bb5b962194",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -491,6 +500,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Xray",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1261e663-d9e2-4116-b0a7-fef76d653e59",
+                    "path": "<Keyboard>/b",
+                    "interactions": "Hold(duration=3,pressPoint=0.5)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "blacklight",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
