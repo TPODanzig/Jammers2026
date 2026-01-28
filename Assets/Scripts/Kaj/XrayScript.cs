@@ -5,7 +5,7 @@ public class XrayScript : MonoBehaviour
 {
     [SerializeField] InputActionReference XrayAction;
     [SerializeField] Transform DitEneXrayMuurtje;
-    public int test = 0;
+    public int XrayActiveInt = 0;
 
     void FixedUpdate()
     {
@@ -23,23 +23,23 @@ public class XrayScript : MonoBehaviour
 
     void CheckForXray()
     {
-        if (test > 1)
+        if (XrayActiveInt > 1)
         {
-            test = 0;
+            XrayActiveInt = 0;
         }
     }
 
     void XrayActivate(InputAction.CallbackContext ctx)
     {
-        if (test == 0)
+        if (XrayActiveInt == 0)
         {
             DitEneXrayMuurtje.GetComponent<MeshRenderer>().enabled = false;
-            test++;
+            XrayActiveInt++;
         }
-        else if(test == 1)
+        else if(XrayActiveInt == 1)
         {
             DitEneXrayMuurtje.GetComponent<MeshRenderer>().enabled = true;
-            test++;
+            XrayActiveInt++;
         }
     }
 }

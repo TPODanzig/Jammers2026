@@ -8,6 +8,16 @@ public class BlackLighteffect : MonoBehaviour
 {
     public  GameObject Volume;
    public InputActionReference blacklight;
+    public Image Fill;
+
+    private void Update()
+    {
+        if (blacklight != null) 
+        {
+            Fill.fillAmount = blacklight.action.GetTimeoutCompletionPercentage();
+        }
+    }
+
     private void OnEnable()
     {
         blacklight.action.performed += MaskActive;
@@ -20,6 +30,7 @@ public class BlackLighteffect : MonoBehaviour
     }
     void MaskActive(InputAction.CallbackContext ctx) 
     {
+        
         Volume.SetActive(true);
     } 
 }
