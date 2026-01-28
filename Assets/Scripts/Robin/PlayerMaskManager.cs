@@ -61,7 +61,7 @@ public class PlayerMaskManager : MonoBehaviour
             }
         }
 
-        else if (Input.GetKey(KeyCode.Mouse0))
+        else if (Input.GetKey(KeyCode.Mouse0) && SActiveMask != ActiveMask.None)
         {
             inputActive = true;
         }
