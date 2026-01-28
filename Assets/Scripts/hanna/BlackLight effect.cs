@@ -1,8 +1,11 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 
 public class BlackLighteffect : MonoBehaviour
 {
+    public  GameObject Volume;
+   public InputActionReference blacklight;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -14,4 +17,8 @@ public class BlackLighteffect : MonoBehaviour
     {
         
     }
+    void MaskActive(InputAction.CallbackContext ctx) 
+    {
+        Volume.SetActive(true);
+    } 
 }
