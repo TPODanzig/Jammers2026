@@ -564,7 +564,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: aae4d40fd9393f14d921d5024e89f838, type: 2}
     - target: {fileID: 919132149155446097, guid: e9a454a2b5c8e3040819b63ae99bca0f, type: 3}
       propertyPath: m_Name
-      value: Red Cone (1)
+      value: 'Red Cone '
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -576,6 +576,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e9a454a2b5c8e3040819b63ae99bca0f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2087285373}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e9a454a2b5c8e3040819b63ae99bca0f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2087285379}
   m_SourcePrefab: {fileID: 100100000, guid: e9a454a2b5c8e3040819b63ae99bca0f, type: 3}
 --- !u!1 &2025374184
 GameObject:
@@ -589,7 +592,7 @@ GameObject:
   - component: {fileID: 2025374187}
   - component: {fileID: 2025374186}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -683,11 +686,25 @@ MonoBehaviour:
   _position1: {x: 0, y: 0, z: 0}
   _position2: {x: 5.62, y: 4.01, z: -12.92}
   MovingTowards: 1
+  _speed: 1
 --- !u!4 &2087285376 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e9a454a2b5c8e3040819b63ae99bca0f, type: 3}
   m_PrefabInstance: {fileID: 1928137374}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2087285379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2087285372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a3934c456308e0409c84cd502bae725, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Masked: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
