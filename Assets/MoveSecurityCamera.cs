@@ -7,9 +7,7 @@ public class MoveSecurityCamera : MonoBehaviour
     [SerializeField] private Vector3 _position2;
 
     [SerializeField] bool MovingTowards = true;
-
-
-
+    [SerializeField] private float _speed = 1;
     //move gameobject between 2 points though code
 
     private void Start()
@@ -21,19 +19,22 @@ public class MoveSecurityCamera : MonoBehaviour
     {
         if (MovingTowards == true)
         {
-            if ( this.transform.position == _position2)
+            if (this.transform.position == _position2)
             {
                 MovingTowards = false;
             }
-            
-            this.gameObject.transform.position = Vector3.MoveTowards(transform.position, _position2, Time.deltaTime);
+
+            this.gameObject.transform.position = Vector3.MoveTowards(transform.position, _position2, _speed * Time.deltaTime);
         }
-           
-         else
+        else
+        {
+            if (this.transform.position == _position1)
             {
-                this.gameObject.transform.position = Vector3.MoveTowards(transform.position, _position1, Time.deltaTime);
+                MovingTowards = true;
             }
+            this.gameObject.transform.position = Vector3.MoveTowards(transform.position, _position1, _speed * Time.deltaTime);
 
         }
     }
+}
 
