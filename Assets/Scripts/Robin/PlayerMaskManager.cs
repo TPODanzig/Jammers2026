@@ -99,15 +99,15 @@ public class PlayerMaskManager : MonoBehaviour
             //Timer klaar, selecteer je actie
             if (activeWearTimer > 1)
             {
-                if (Input.GetKeyDown("1"))
+                if (Input.GetKey("1"))
                 {
                     SActiveMask = ActiveMask.BlackLight;
                 }
-                else if (Input.GetKeyDown("2"))
+                else if (Input.GetKey("2"))
                 {
                     SActiveMask = ActiveMask.Disguise;
                 }
-                else if (Input.GetKeyDown("3"))
+                else if (Input.GetKey("3"))
                 {
                     SActiveMask = ActiveMask.XRay;
                 }
@@ -152,22 +152,26 @@ public class PlayerMaskManager : MonoBehaviour
         {
             if (SActiveMask == ActiveMask.BlackLight)
             {
+                activeBlacklightScript.BLMaskActive = true;
                 activeDisguiseScript.CamoMaskOn = false;
                 activeXRayScript.XrayActive = false;
             }
             else if (SActiveMask == ActiveMask.Disguise)
             {
+                activeBlacklightScript.BLMaskActive = false;
                 activeDisguiseScript.CamoMaskOn = true;
                 activeXRayScript.XrayActive = false;
             }
             else if (SActiveMask == ActiveMask.XRay)
             {
+                activeBlacklightScript.BLMaskActive = false;
                 activeDisguiseScript.CamoMaskOn = false;
                 activeXRayScript.XrayActive = true;
             }
         }
         else
         {
+            activeBlacklightScript.BLMaskActive = false;
             activeDisguiseScript.CamoMaskOn = false;
             activeXRayScript.XrayActive = false;
         }
