@@ -1,6 +1,7 @@
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
@@ -19,6 +20,11 @@ public class Timer : MonoBehaviour
         else
         {
             timerText.text = "";
+        }
+
+        if (countDown <= 0)
+        {
+            SceneManager.LoadScene(3);
         }
     }
 }

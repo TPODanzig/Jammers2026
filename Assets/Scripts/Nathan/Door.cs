@@ -11,6 +11,7 @@ public class Door : MonoBehaviour
         if (PaswordManager.paswordManager.password == keypad.pasword)
         {
             unlockDoor = true;
+            keypad.pasword = null;
         }
         else if (keypad.buttonsPressed > 3)
         {
@@ -20,16 +21,13 @@ public class Door : MonoBehaviour
         if (unlockDoor == true)
         {
             OpenDoor();
+            unlockDoor = false;
         }
     }
 
     public void OpenDoor()
     {
-        openTimer -= Time.deltaTime;
-        if (openTimer >= 0.2f)
-        {
-            transform.Rotate(doorRotation * Time.deltaTime);
-        }
+            transform.Rotate(doorRotation * 4);
     }
 }
 
