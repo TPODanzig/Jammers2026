@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 public class InteractionScript : MonoBehaviour
 {
     public GameObject InteractionText;
+    private Door door;
 
     private void Start()
     {
@@ -26,6 +27,10 @@ public class InteractionScript : MonoBehaviour
             InteractionText.SetActive(true);
             if (Input.GetKey("e"))
             {
+                if (other.GetComponent<Door>() != null)
+                {
+                    other.GetComponent<Door>().OpenDoor();
+                }
                 if (other.GetComponent<MaskPickup>() != null)
                 {
                     other.GetComponent<MaskPickup>().PlayerInteraction();
