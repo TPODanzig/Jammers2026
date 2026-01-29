@@ -15,6 +15,12 @@ public class MaskPickup : MonoBehaviour
 
     private InputAction InteractAction;
 
+    [SerializeField] GameObject Minigame1;
+    [SerializeField] GameObject Minigame2;
+    [SerializeField] GameObject Minigame3;
+
+    public static bool MinigamingIt;
+
     private void Start()
     {
         startPos = transform.position;
@@ -30,6 +36,11 @@ public class MaskPickup : MonoBehaviour
     {
         Spin();
         Bounce();
+
+        if (MinigamingIt)
+        {
+            TriggerMinigame();
+        }
     }
 
     private void OnTriggerStay(Collider other)
@@ -38,10 +49,33 @@ public class MaskPickup : MonoBehaviour
         {
             if (other.CompareTag("Player"))
             {
-                CollectMask();
+                MinigamingIt = true;
             }
         }
     }
+
+    void TriggerMinigame()
+    {
+        if (PlayerMaskManager.SMaskAmount == 0)
+        {
+            Minigame1.SetActive(true);
+        }
+        else if (PlayerMaskManager.SMaskAmount == 1)
+        {
+            Minigame2.SetActive(true);
+        }
+        else if (PlayerMaskManager.SMaskAmount == 2)
+        {
+            Minigame3.SetActive(true);
+        }
+        else
+        {
+            Minigame1.SetActive(false);
+            Minigame2.SetActive(false);
+            Minigame3.SetActive(false);
+        }
+    }
+
 
     void CollectMask()
     {

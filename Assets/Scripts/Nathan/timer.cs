@@ -10,9 +10,16 @@ public class Timer : MonoBehaviour
 
     private void FixedUpdate()
     {
-        countDown -= Time.deltaTime;
-        roundCountDown = (int)countDown;
-        timerText.text = roundCountDown.ToString();
+        if (!MaskPickup.MinigamingIt)
+        {
+            countDown -= Time.deltaTime;
+            roundCountDown = (int)countDown;
+            timerText.text = roundCountDown.ToString();
+        }
+        else
+        {
+            timerText.text = "";
+        }
     }
 }
 

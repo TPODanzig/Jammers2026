@@ -16,14 +16,17 @@ public class CharacterMovement : MonoBehaviour
 
     private void Update()
     {
-        Vector3 move = transform.right * Input.GetAxis("Horizontal") + transform.forward * Input.GetAxis("Vertical");
-        cc.Move(move * speed * Time.deltaTime);
-        if(cc.isGrounded && velocity.y < 0)
+        if (!MaskPickup.MinigamingIt)
         {
-            velocity.y = -2;
+            Vector3 move = transform.right * Input.GetAxis("Horizontal") + transform.forward * Input.GetAxis("Vertical");
+            cc.Move(move * speed * Time.deltaTime);
+            if (cc.isGrounded && velocity.y < 0)
+            {
+                velocity.y = -2;
+            }
+            velocity.y += gravity * Time.deltaTime;
+            cc.Move(velocity * Time.deltaTime);
         }
-        velocity.y += gravity * Time.deltaTime;
-        cc.Move(velocity * Time.deltaTime);
     }
 
 }
