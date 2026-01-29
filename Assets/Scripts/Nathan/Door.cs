@@ -15,6 +15,7 @@ public class Door : MonoBehaviour
         else if (keypad.buttonsPressed > 3)
         {
             keypad.buttonsPressed = 0;
+            keypad.pasword = null;
         }
         if (unlockDoor == true)
         {
