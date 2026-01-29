@@ -23,8 +23,21 @@ public class PlayerMaskManager : MonoBehaviour
 
     private bool inputActive;
 
+    private BlackLighteffect activeBlacklightScript;
+    //private [DisguiseScript] activeDisguiseScript;
+    private XrayScript activeXRayScript;
+
+
+    private void Start()
+    {
+        activeBlacklightScript = GetComponent<BlackLighteffect>();
+        //activeDisguiseScript = GetComponent<DisguiseScript>();
+        activeXRayScript = GetComponent<XrayScript>();
+    }
+
     private void Update()
     {
+        RunDebug();
         //check of je 1,2,3 of L mouse klikt
 
         if (Input.GetKey("1") && SMaskAmount >= 1 && SActiveMask != ActiveMask.BlackLight)
@@ -127,6 +140,17 @@ public class PlayerMaskManager : MonoBehaviour
             WearTimer.gameObject.SetActive(false);
             activeWearTimer = 0;
             maskLocked = false;
+        }
+    }
+
+    void RunDebug()
+    {
+        if (Application.isEditor)
+        {
+            if (Input.GetKeyDown(KeyCode.M))
+            {
+                SMaskAmount++;
+            }
         }
     }
 }
