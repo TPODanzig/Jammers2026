@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 33224a741f792c845a33d2e29da25227
+guid: ba37c15d380775a43a91c0d215211a2a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Jerry de slang_0
+      name: controlst_0
       rect:
         serializedVersion: 2
         x: 0
@@ -125,14 +125,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 395a7816c255386479813c87fa7abda6
-      internalID: 702067655
+      spriteID: ca10d87d97825c5449257282d1388be5
+      internalID: 1303600524
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jerry de slang_1
+      name: controlst_1
       rect:
         serializedVersion: 2
         x: 16
@@ -147,14 +147,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 35b51997678539544b0a2bb6d81115b4
-      internalID: 1043767720
+      spriteID: 0be5cf248cf778e4aaf65c10672288a4
+      internalID: 1668597436
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jerry de slang_2
+      name: controlst_2
       rect:
         serializedVersion: 2
         x: 32
@@ -169,14 +169,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ead374567132a3849a1349e3ebe9a3dc
-      internalID: 1892287530
+      spriteID: 8fc29272df12c27488e3d6f06c6b372a
+      internalID: -1977198509
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jerry de slang_3
+      name: controlst_3
       rect:
         serializedVersion: 2
         x: 48
@@ -191,52 +191,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40eb38720f60a1345a448e4490a77002
-      internalID: -1111362412
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jerry de slang_4
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 51a6b7930daaf544196c7803c5e78a45
-      internalID: 861490928
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jerry de slang_5
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cf872faed606f5143a5ab24890939c9f
-      internalID: -406749505
+      spriteID: fff2aa4a4e151c049b5a96bd8d7875b5
+      internalID: 400965042
       vertices: []
       indices: 
       edges: []
@@ -245,7 +201,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: aecdd65ba3f4219438e4f99e3cf2942b
+    spriteID: 75a45beb26491574e91bc30bd6120118
     internalID: 0
     vertices: []
     indices: 
@@ -255,12 +211,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Jerry de slang_0: 702067655
-      Jerry de slang_1: 1043767720
-      Jerry de slang_2: 1892287530
-      Jerry de slang_3: -1111362412
-      Jerry de slang_4: 861490928
-      Jerry de slang_5: -406749505
+      controlst_0: 1303600524
+      controlst_1: 1668597436
+      controlst_2: -1977198509
+      controlst_3: 400965042
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
