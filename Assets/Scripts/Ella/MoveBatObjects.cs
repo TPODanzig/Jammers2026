@@ -5,10 +5,15 @@ public class MoveBatObjects : MonoBehaviour
 {
     [SerializeField] private Vector3 _endPos;
     [SerializeField] private float _speed;
-    [SerializeField] private Vector3 current;
+
+    private RectTransform rect;
+
+    void Start()
+    {
+        rect = GetComponent<RectTransform>();
+    }
     void Update()
     {
-        current = transform.position;
-        this.gameObject.transform.position = Vector3.MoveTowards(current, _endPos, _speed * Time.deltaTime);
+        rect.anchoredPosition = Vector2.MoveTowards(rect.anchoredPosition, _endPos, _speed * Time.deltaTime);
     }
 }
