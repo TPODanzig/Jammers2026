@@ -45,6 +45,7 @@ public class MaskPickup : MonoBehaviour
 
     void CollectMask()
     {
+        Timer.countDown += 30;
         PlayerMaskManager.SMaskAmount++;
         Destroy(this.gameObject);
     }
