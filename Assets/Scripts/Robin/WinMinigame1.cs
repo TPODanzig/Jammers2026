@@ -1,16 +1,19 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class WinMinigame1 : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    private GameObject parent;
+    private MaskPickup parentScript;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        parentScript = transform.parent.transform.GetComponentInParent<MaskPickup>();
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        parentScript.CollectMask();
+        MaskPickup.MinigamingIt = false;
+        Destroy(this.gameObject);
     }
 }

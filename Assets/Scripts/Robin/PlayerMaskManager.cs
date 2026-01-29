@@ -80,7 +80,7 @@ public class PlayerMaskManager : MonoBehaviour
             }
         }
 
-        else if (Input.GetKey("G") && SActiveMask != ActiveMask.None)
+        else if (Input.GetKey(KeyCode.G) && SActiveMask != ActiveMask.None)
         {
             inputActive = true;
         }
@@ -122,7 +122,7 @@ public class PlayerMaskManager : MonoBehaviour
                 {
                     SActiveMask = ActiveMask.XRay;
                 }
-                else if (Input.GetKey("G"))
+                else if (Input.GetKey(KeyCode.G))
                 {
                     if (!SWearingMask)
                     {
