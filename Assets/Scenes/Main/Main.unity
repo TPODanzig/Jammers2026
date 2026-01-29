@@ -2286,11 +2286,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a91059a0ed968d34591cd72fa84b26b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DitEneXrayMuurtje: {fileID: 0}
+  DitEneXrayMuurtje: {fileID: 1291635796}
   XrayActive: 0
   Volume: {fileID: 96391051}
-  OpagueMat: {fileID: 0}
-  TransMat: {fileID: 0}
 --- !u!114 &1028766276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4358,6 +4356,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 24259827275620794, guid: 51751eb9924b7aa4a81ad35889afb9eb, type: 3}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1300768459911365291, guid: 51751eb9924b7aa4a81ad35889afb9eb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
