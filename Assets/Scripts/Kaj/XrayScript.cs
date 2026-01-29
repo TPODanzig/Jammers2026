@@ -60,6 +60,9 @@ public class XrayScript : MonoBehaviour
             }
         }
 
-        DitEneXrayMuurtje.GetComponent<Renderer>().materials = Mat;
+        if (DitEneXrayMuurtje != null)
+        {
+            DitEneXrayMuurtje.GetComponent<Renderer>().materials = Mat;
+        }
     }
 }
