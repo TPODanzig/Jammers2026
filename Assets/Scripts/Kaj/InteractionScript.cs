@@ -11,6 +11,14 @@ public class InteractionScript : MonoBehaviour
         InteractionText.SetActive(false);
     }
 
+    private void Update()
+    {
+        if (MaskPickup.MinigamingIt)
+        {
+            InteractionText.SetActive(false);
+        }
+    }
+
     void OnTriggerStay(Collider other)
     {
         if (other.gameObject.CompareTag("Interactable"))

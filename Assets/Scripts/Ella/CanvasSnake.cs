@@ -10,11 +10,6 @@ public class CanvasSnake : MonoBehaviour
     private MaskPickup parentScript;
     [SerializeField] GameObject _snakeGame;
 
-
-
-
-   
-
     enum Flipped
     {
         flipedRight,
@@ -26,8 +21,7 @@ public class CanvasSnake : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        parentScript = transform.parent.transform.GetComponentInParent<MaskPickup>();
-   
+        parentScript = transform.parent.transform.parent.transform.GetComponentInParent<MaskPickup>();
     }
     
     void Update()
@@ -66,8 +60,8 @@ public class CanvasSnake : MonoBehaviour
 
         if (FoodAmount >= 5)
         {
-            //parentScript.CollectMask();
-            //MaskPickup.MinigamingIt = false;
+            parentScript.CollectMask();
+            MaskPickup.MinigamingIt = false;
             Destroy(_snakeGame);
         }
     }
