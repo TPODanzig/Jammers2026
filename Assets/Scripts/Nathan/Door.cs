@@ -12,6 +12,10 @@ public class Door : MonoBehaviour
         {
             unlockDoor = true;
         }
+        else if (keypad.buttonsPressed > 3)
+        {
+            keypad.buttonsPressed = 0;
+        }
         if (unlockDoor == true)
         {
             OpenDoor();
