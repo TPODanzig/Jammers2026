@@ -5,8 +5,10 @@ public class MoveBatObjects : MonoBehaviour
 {
     [SerializeField] private Vector3 _endPos;
     [SerializeField] private float _speed;
+    [SerializeField] private Vector3 current;
     void Update()
     {
-        this.gameObject.transform.position = Vector3.MoveTowards(transform.position, _endPos, _speed * Time.deltaTime);
+        current = transform.position;
+        this.gameObject.transform.position = Vector3.MoveTowards(current, _endPos, _speed * Time.deltaTime);
     }
 }
