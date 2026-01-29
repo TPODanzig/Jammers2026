@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: 85c6e1e08e00dd34993ac1de3e4c7d47
+guid: dbc1a3954476e0e4bbb78b933e60c417
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Dome
-    second: {fileID: 2100000, guid: 3477b1aab003e71408574946b26556c4, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
