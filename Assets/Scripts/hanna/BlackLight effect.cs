@@ -8,8 +8,6 @@ public class BlackLighteffect : MonoBehaviour
 {
     public bool BLMaskActive;
     public GameObject Volume;
-    public InputActionReference blacklight;
-    public Image Fill;
     bool light;
     public GameObject Light;
 

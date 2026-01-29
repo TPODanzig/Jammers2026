@@ -3,7 +3,6 @@ using UnityEngine.InputSystem;
 
 public class XrayScript : MonoBehaviour
 {
-    [SerializeField] InputActionReference XrayAction;
     [SerializeField] Transform DitEneXrayMuurtje;
     //public int XrayActiveInt = 0;
     public bool XrayActive = false;
