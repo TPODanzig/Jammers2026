@@ -21,7 +21,7 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.596
+    m_Value: 0.369
   smoothness:
     m_OverrideState: 1
     m_Value: 0.833
@@ -43,12 +43,12 @@ MonoBehaviour:
   active: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0.726
   xMultiplier:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0.8
   yMultiplier:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0.8
   center:
     m_OverrideState: 0
@@ -66,7 +66,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7fd9488000d3734a9e00ee676215985, type: 3}
-  m_Name: Global Volume Profile
+  m_Name: Blacklight
   m_EditorClassIdentifier: 
   components:
   - {fileID: 2216006381699397496}
@@ -109,14 +109,14 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 1
   threshold:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 10
+    m_Value: 9
   scatter:
-    m_OverrideState: 1
-    m_Value: 0.655
+    m_OverrideState: 0
+    m_Value: 0
   clamp:
     m_OverrideState: 0
     m_Value: 65479.38
