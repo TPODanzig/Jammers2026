@@ -5,41 +5,41 @@ public class XrayScript : MonoBehaviour
 {
     [SerializeField] InputActionReference XrayAction;
     [SerializeField] Transform DitEneXrayMuurtje;
-    public int test = 0;
+    //public int XrayActiveInt = 0;
+    public bool XrayActive = false;
 
     void FixedUpdate()
     {
-        CheckForXray();
+        //CheckForXray();
+        XrayActivate();
     }
     public void OnEnable()
     {
-        XrayAction.action.performed += XrayActivate;
+        //XrayAction.action.performed += XrayActivate;
     }
 
     private void OnDisable()
     {
-        XrayAction.action.performed -= XrayActivate;
+        //XrayAction.action.performed -= XrayActivate;
     }
 
     void CheckForXray()
     {
-        if (test > 1)
-        {
-            test = 0;
-        }
+        //if (XrayActiveInt > 1)
+        //{
+        //    XrayActiveInt = 0;
+        //}
     }
 
-    void XrayActivate(InputAction.CallbackContext ctx)
+    public void XrayActivate()
     {
-        if (test == 0)
+        if (XrayActive)
         {
             DitEneXrayMuurtje.GetComponent<MeshRenderer>().enabled = false;
-            test++;
         }
-        else if(test == 1)
+        else if(!XrayActive)
         {
             DitEneXrayMuurtje.GetComponent<MeshRenderer>().enabled = true;
-            test++;
         }
     }
 }
