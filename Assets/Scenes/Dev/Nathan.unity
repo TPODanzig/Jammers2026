@@ -845,6 +845,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogText: {fileID: 935655132}
+  letterDelay: 0.05
   sentences:
   - Robin liked quiet things.
   - He liked the early morning before the buses started growling down the street,
@@ -1305,7 +1306,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2442788559947521338, guid: dae3637d85025e5438c12f9b13349be1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.5470002
+      value: 0.89
       objectReference: {fileID: 0}
     - target: {fileID: 2442788559947521338, guid: dae3637d85025e5438c12f9b13349be1, type: 3}
       propertyPath: m_LocalPosition.y
