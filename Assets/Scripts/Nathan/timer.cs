@@ -24,6 +24,7 @@ public class Timer : MonoBehaviour
 
         if (countDown <= 0)
         {
+            Cursor.lockState = CursorLockMode.None;
             SceneManager.LoadScene(3);
         }
     }
