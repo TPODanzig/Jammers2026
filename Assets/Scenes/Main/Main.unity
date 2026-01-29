@@ -539,7 +539,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &330585545
 Camera:
   m_ObjectHideFlags: 0
@@ -1203,9 +1203,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a91059a0ed968d34591cd72fa84b26b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DitEneXrayMuurtje: {fileID: 0}
+  DitEneXrayMuurtje: {fileID: 1151420540}
   XrayActive: 0
-  Effect: {fileID: 96391051}
+  Volume: {fileID: 96391051}
 --- !u!114 &1028766276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1631,6 +1631,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -4853426554043716173, guid: c70584963012e5c48a4a3fae30f1f091, type: 3}
+--- !u!4 &1151420540 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1424122764304179028, guid: e821f86a4abf9db40bf98fa2f93f2c6e, type: 3}
+  m_PrefabInstance: {fileID: 361310783}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1261926442
 PrefabInstance:
   m_ObjectHideFlags: 0
