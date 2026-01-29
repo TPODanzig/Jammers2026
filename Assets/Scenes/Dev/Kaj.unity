@@ -748,7 +748,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   XrayAction: {fileID: 2402407701173473970, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   DitEneXrayMuurtje: {fileID: 747573511}
-  test: 0
+  XrayActive: 0
 --- !u!1 &2113653695
 GameObject:
   m_ObjectHideFlags: 0
