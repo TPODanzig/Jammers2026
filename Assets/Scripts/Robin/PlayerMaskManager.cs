@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class PlayerMaskManager : MonoBehaviour
@@ -38,6 +39,8 @@ public class PlayerMaskManager : MonoBehaviour
     private void Update()
     {
         RunDebug();
+        RunMasks();
+
         //check of je 1,2,3 of L mouse klikt
 
         if (Input.GetKey("1") && SMaskAmount >= 1 && SActiveMask != ActiveMask.BlackLight)
@@ -140,6 +143,29 @@ public class PlayerMaskManager : MonoBehaviour
             WearTimer.gameObject.SetActive(false);
             activeWearTimer = 0;
             maskLocked = false;
+        }
+    }
+
+    void RunMasks()
+    {
+        if (SWearingMask)
+        {
+            if (SActiveMask == ActiveMask.BlackLight)
+            {
+                activeXRayScript.XrayActive = false;
+            }
+            else if (SActiveMask == ActiveMask.Disguise)
+            {
+                activeXRayScript.XrayActive = false;
+            }
+            else if (SActiveMask == ActiveMask.XRay)
+            {
+                activeXRayScript.XrayActive = true;
+            }
+        }
+        else
+        {
+            activeXRayScript.XrayActive = false;
         }
     }
 
