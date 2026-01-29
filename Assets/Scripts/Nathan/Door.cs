@@ -8,20 +8,23 @@ public class Door : MonoBehaviour
     public bool unlockDoor = false;
     private void FixedUpdate()
     {
-        if (PaswordManager.paswordManager.password == keypad.pasword)
+        if (keypad != null)
         {
-            unlockDoor = true;
-            keypad.pasword = null;
-        }
-        else if (keypad.buttonsPressed > 3)
-        {
-            keypad.buttonsPressed = 0;
-            keypad.pasword = null;
-        }
-        if (unlockDoor == true)
-        {
-            OpenDoor();
-            unlockDoor = false;
+            if (PaswordManager.paswordManager.password == keypad.pasword)
+            {
+                unlockDoor = true;
+                keypad.pasword = null;
+            }
+            else if (keypad.buttonsPressed > 3)
+            {
+                keypad.buttonsPressed = 0;
+                keypad.pasword = null;
+            }
+            if (unlockDoor == true)
+            {
+                OpenDoor();
+                unlockDoor = false;
+            }
         }
     }
 
