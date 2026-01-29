@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e06be224687efb94ea88ea97a82fb3a5
+guid: 18f9145ef19fbe04a8145f66c4d08530
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Kameleon 50% kans dat dit goed ist_0
+      name: Kameleon 50% kans dat dit goed ist 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -125,14 +125,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 541db489664c42545858fd8fd210cf3e
-      internalID: 23873291
+      spriteID: fe615b0c0689b904a9e7d5120bbb4bfe
+      internalID: 1508305897
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kameleon 50% kans dat dit goed ist_1
+      name: Kameleon 50% kans dat dit goed ist 1_1
       rect:
         serializedVersion: 2
         x: 16
@@ -147,14 +147,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba0c9b90042d46a43ae5b9f0461bcb40
-      internalID: 1280943844
+      spriteID: 8bdf637e99933ae4aadeb97a4a131af8
+      internalID: -1488159585
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kameleon 50% kans dat dit goed ist_2
+      name: Kameleon 50% kans dat dit goed ist 1_2
       rect:
         serializedVersion: 2
         x: 32
@@ -169,14 +169,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 464bc9ff4ed984b43b3f6520b27096f3
-      internalID: -991460596
+      spriteID: 0b183955fef68944297e34237b4b1f6d
+      internalID: 1559066042
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kameleon 50% kans dat dit goed ist_3
+      name: Kameleon 50% kans dat dit goed ist 1_3
       rect:
         serializedVersion: 2
         x: 48
@@ -191,14 +191,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c967e8571eab104283332772b9a014c
-      internalID: -1185991331
+      spriteID: f7ab625030d5932409bbea32afffe5b3
+      internalID: -1421864998
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kameleon 50% kans dat dit goed ist_4
+      name: Kameleon 50% kans dat dit goed ist 1_4
       rect:
         serializedVersion: 2
         x: 64
@@ -213,14 +213,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a0034c0a9cb5fab4aa2fc0489776b1bb
-      internalID: 553497176
+      spriteID: 59af38d0d5fadc24cabbeaf987b24837
+      internalID: -1333018936
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kameleon 50% kans dat dit goed ist_5
+      name: Kameleon 50% kans dat dit goed ist 1_5
       rect:
         serializedVersion: 2
         x: 80
@@ -235,14 +235,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6075a4629e0a4ed41b767d8fafeadacb
-      internalID: 643182904
+      spriteID: 472180599cc5c2c4b9d4d4b27f6588e4
+      internalID: 1321731293
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kameleon 50% kans dat dit goed ist_6
+      name: Kameleon 50% kans dat dit goed ist 1_6
       rect:
         serializedVersion: 2
         x: 96
@@ -257,14 +257,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 22da3e166eb090e489794aaaaefc155a
-      internalID: 371384398
+      spriteID: 9d2679a8a8c62634d83c4604fac415a9
+      internalID: -1991507495
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kameleon 50% kans dat dit goed ist_7
+      name: Kameleon 50% kans dat dit goed ist 1_7
       rect:
         serializedVersion: 2
         x: 112
@@ -279,14 +279,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d219425c1fe9bdf4f83952116d5097d3
-      internalID: -136133059
+      spriteID: aba52e908c5f11e4f99c5a3de76b6b8d
+      internalID: -769847305
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kameleon 50% kans dat dit goed ist_8
+      name: Kameleon 50% kans dat dit goed ist 1_8
       rect:
         serializedVersion: 2
         x: 128
@@ -301,14 +301,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57e85ddb88ab72a4ca896902fa541f99
-      internalID: -519279910
+      spriteID: b07bf493a5577684caec61714fbe3f04
+      internalID: -1947405267
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kameleon 50% kans dat dit goed ist_9
+      name: Kameleon 50% kans dat dit goed ist 1_9
       rect:
         serializedVersion: 2
         x: 144
@@ -323,14 +323,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 385c58945d25ff146b01367e683ef303
-      internalID: -398005174
+      spriteID: 73b1579a1fea1aa4cb6514483c1efc68
+      internalID: 969962165
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kameleon 50% kans dat dit goed ist_10
+      name: Kameleon 50% kans dat dit goed ist 1_10
       rect:
         serializedVersion: 2
         x: 160
@@ -345,14 +345,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4fafdf49db56fa04b881ae8272daf3f7
-      internalID: -1530190959
+      spriteID: 0ecfee6bb6a380644962e2abeff23947
+      internalID: -67828831
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kameleon 50% kans dat dit goed ist_11
+      name: Kameleon 50% kans dat dit goed ist 1_11
       rect:
         serializedVersion: 2
         x: 176
@@ -367,14 +367,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b3c3cd9c3f93d541909b92c7822d78b
-      internalID: 1832304136
+      spriteID: bca8bf70d228d51469f53a7be7ab2a52
+      internalID: -1494206846
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kameleon 50% kans dat dit goed ist_12
+      name: Kameleon 50% kans dat dit goed ist 1_12
       rect:
         serializedVersion: 2
         x: 192
@@ -389,14 +389,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7889931aaaeaf954c9cdca77cae6bd6f
-      internalID: 999031169
+      spriteID: ba72e660535a8d647873c92367d5ddc5
+      internalID: -989718233
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kameleon 50% kans dat dit goed ist_13
+      name: Kameleon 50% kans dat dit goed ist 1_13
       rect:
         serializedVersion: 2
         x: 208
@@ -411,8 +411,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf228a722bf86e8439f25d47c92ddcb9
-      internalID: 734177390
+      spriteID: 9872b2bd9ff43a043a09b08ac36c116e
+      internalID: 1884003087
       vertices: []
       indices: 
       edges: []
@@ -421,7 +421,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 34410689df8a84b49a8075ac38fb9634
+    spriteID: db0474a71aca13540a85959d23f7adcd
     internalID: 0
     vertices: []
     indices: 
@@ -431,20 +431,20 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Kameleon 50% kans dat dit goed ist_0: 23873291
-      Kameleon 50% kans dat dit goed ist_1: 1280943844
-      Kameleon 50% kans dat dit goed ist_10: -1530190959
-      Kameleon 50% kans dat dit goed ist_11: 1832304136
-      Kameleon 50% kans dat dit goed ist_12: 999031169
-      Kameleon 50% kans dat dit goed ist_13: 734177390
-      Kameleon 50% kans dat dit goed ist_2: -991460596
-      Kameleon 50% kans dat dit goed ist_3: -1185991331
-      Kameleon 50% kans dat dit goed ist_4: 553497176
-      Kameleon 50% kans dat dit goed ist_5: 643182904
-      Kameleon 50% kans dat dit goed ist_6: 371384398
-      Kameleon 50% kans dat dit goed ist_7: -136133059
-      Kameleon 50% kans dat dit goed ist_8: -519279910
-      Kameleon 50% kans dat dit goed ist_9: -398005174
+      Kameleon 50% kans dat dit goed ist 1_0: 1508305897
+      Kameleon 50% kans dat dit goed ist 1_1: -1488159585
+      Kameleon 50% kans dat dit goed ist 1_10: -67828831
+      Kameleon 50% kans dat dit goed ist 1_11: -1494206846
+      Kameleon 50% kans dat dit goed ist 1_12: -989718233
+      Kameleon 50% kans dat dit goed ist 1_13: 1884003087
+      Kameleon 50% kans dat dit goed ist 1_2: 1559066042
+      Kameleon 50% kans dat dit goed ist 1_3: -1421864998
+      Kameleon 50% kans dat dit goed ist 1_4: -1333018936
+      Kameleon 50% kans dat dit goed ist 1_5: 1321731293
+      Kameleon 50% kans dat dit goed ist 1_6: -1991507495
+      Kameleon 50% kans dat dit goed ist 1_7: -769847305
+      Kameleon 50% kans dat dit goed ist 1_8: -1947405267
+      Kameleon 50% kans dat dit goed ist 1_9: 969962165
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
