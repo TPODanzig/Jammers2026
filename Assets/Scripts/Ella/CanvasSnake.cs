@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CanvasSnake : MonoBehaviour
 {
@@ -9,6 +10,14 @@ public class CanvasSnake : MonoBehaviour
 
     private MaskPickup parentScript;
     [SerializeField] GameObject _snakeGame;
+
+    [SerializeField] Sprite sideways;
+    [SerializeField] Sprite UpAndDown;
+
+    [SerializeField] Image spriteshit;
+
+    private Vector2 _direction = Vector2.right;
+    [SerializeField] RectTransform rect;
 
     enum Flipped
     {
@@ -26,37 +35,53 @@ public class CanvasSnake : MonoBehaviour
     
     void Update()
     {
-        float inputY = Input.GetAxis("Vertical");
-        float inputX = Input.GetAxis("Horizontal");
-        _moveInput.y = inputY * _speed * Time.deltaTime;
-        _moveInput.x = inputX * _speed * Time.deltaTime;
-        transform.Translate(_moveInput);
+
+
+        if (Input.GetKeyDown(KeyCode.W)) 
+        { 
+            _direction = Vector2.up;
+            flippedVAR = Flipped.flippedUp;
+        }
+        else if (Input.GetKeyDown(KeyCode.S))
+        { 
+            _direction = Vector2.down;
+            flippedVAR = Flipped.flippedDown;
+        }
+        else if (Input.GetKeyDown(KeyCode.A))
+        {
+            _direction = Vector2.left;
+            flippedVAR = Flipped.flippedLeft;
+        }
+        else if (Input.GetKeyDown(KeyCode.D))
+        { 
+            _direction = Vector2.right;
+            flippedVAR = Flipped.flipedRight;
+
+        }
 
 
         if (flippedVAR == Flipped.flipedRight)
         {
+            spriteshit.sprite = sideways;
             this.gameObject.transform.localScale = new Vector3(-0.5f, 0.5f, 0.5f);
-            this.gameObject.transform.eulerAngles = new Vector3(0f, 0f, 0f);
         }
-        else if (flippedVAR == Flipped.flippedLeft) 
+        else if (flippedVAR == Flipped.flippedLeft)
         {
+            spriteshit.sprite = sideways;
             this.gameObject.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
-            this.gameObject.transform.eulerAngles = new Vector3(0f, 0f, 0f);
         }
-        if (inputX < 0)
+        else if (flippedVAR == Flipped.flippedUp)
         {
-            flippedVAR = Flipped.flippedLeft;
+            spriteshit.sprite = UpAndDown;
+            this.gameObject.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
         }
-        else if (inputX > 0)
+        else if (flippedVAR == Flipped.flippedDown)
         {
-            flippedVAR = Flipped.flipedRight;
-        }else if (inputY < 0)
-        {
-            flippedVAR = Flipped.flippedDown;
+            spriteshit.sprite = UpAndDown;
+            this.gameObject.transform.localScale = new Vector3(0.5f, -0.5f, 0.5f);
         }
-        else if(inputY > 0){
-            flippedVAR= Flipped.flippedUp;
-        }
+
+        
 
         if (FoodAmount >= 5)
         {
@@ -64,5 +89,9 @@ public class CanvasSnake : MonoBehaviour
             MaskPickup.MinigamingIt = false;
             Destroy(_snakeGame);
         }
+    }
+    private void FixedUpdate()
+    {
+        this.transform.position = new Vector3(Mathf.Round(this.transform.position.x) + _direction.x, Mathf.Round(this.transform.position.y) + _direction.y, Mathf.Round(this.transform.position.z));
     }
 }
