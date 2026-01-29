@@ -22,6 +22,7 @@ public class MaskPickup : MonoBehaviour
     private GameObject activeMinigame;
 
     public static bool MinigamingIt;
+    private bool ActiveMinigame;
 
     private void Start()
     {
@@ -39,12 +40,13 @@ public class MaskPickup : MonoBehaviour
         Spin();
         Bounce();
 
-        if (MinigamingIt)
+        if (ActiveMinigame)
         {
             TriggerMinigame();
         }
-        else
+        if (!MinigamingIt)
         {
+            ActiveMinigame = false;
             Destroy(activeMinigame);
         }
     }
@@ -52,6 +54,7 @@ public class MaskPickup : MonoBehaviour
     public void PlayerInteraction()
     { 
         MinigamingIt = true;
+        ActiveMinigame = true;
     }
 
     void TriggerMinigame()
