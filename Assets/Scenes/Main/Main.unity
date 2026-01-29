@@ -1026,7 +1026,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   XrayAction: {fileID: 0}
-  DitEneXrayMuurtje: {fileID: 0}
+  DitEneXrayMuurtje: {fileID: 1151420540}
   XrayActive: 0
 --- !u!114 &1028766276
 MonoBehaviour:
@@ -1284,6 +1284,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -4853426554043716173, guid: c70584963012e5c48a4a3fae30f1f091, type: 3}
+--- !u!4 &1151420540 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1424122764304179028, guid: e821f86a4abf9db40bf98fa2f93f2c6e, type: 3}
+  m_PrefabInstance: {fileID: 361310783}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1568716861
 PrefabInstance:
   m_ObjectHideFlags: 0
