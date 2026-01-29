@@ -34,10 +34,11 @@ public class BlackLighteffect : MonoBehaviour
 
     private void NoRun()
     {
-        Volume.SetActive(false);
-        if (Light.CompareTag("Light"))
-        {
-            light = false;
-        }
+        //hanna fix dit ooit plz
+        //Volume.SetActive(false);
+        //if (Light.CompareTag("Light"))
+        //{
+        //    light = false;
+        //}
     }
 }
