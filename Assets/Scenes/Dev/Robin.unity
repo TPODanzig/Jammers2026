@@ -823,7 +823,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WearTimer: {fileID: 332555333}
-  aPlayer: {fileID: 0}
+  aPlayer: {fileID: 4446179578057852406, guid: ec32d3ec040a97a4283a1686c0701f01, type: 3}
 --- !u!4 &886571235
 Transform:
   m_ObjectHideFlags: 0
