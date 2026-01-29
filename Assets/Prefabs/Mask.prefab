@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1013028567605476447}
   - component: {fileID: 5451480100565687446}
   - component: {fileID: 8361156077691694298}
+  - component: {fileID: 761311377331907487}
   m_Layer: 0
   m_Name: Mask
   m_TagString: Interactable
@@ -55,7 +56,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fab391ffd59b0540a481dbbbf09d9df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Minigame1: {fileID: 7644054606873007142, guid: 69c03dd5ca9fc554d9a145ea92ab4edc, type: 3}
+  Minigame1: {fileID: 2797144752875352235, guid: 3c0d05273a732754b8f5aa44de566c13, type: 3}
   Minigame2: {fileID: 7644054606873007142, guid: 69c03dd5ca9fc554d9a145ea92ab4edc, type: 3}
   Minigame3: {fileID: 7644054606873007142, guid: 69c03dd5ca9fc554d9a145ea92ab4edc, type: 3}
 --- !u!23 &5451480100565687446
@@ -124,3 +125,30 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &761311377331907487
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1712683614197249874}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
