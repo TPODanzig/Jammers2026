@@ -215,6 +215,55 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3661f9ad315aad54f9f75c64f5bd9806, type: 3}
+--- !u!1 &96391051
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 96391053}
+  - component: {fileID: 96391052}
+  m_Layer: 0
+  m_Name: 'Xray effect '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &96391052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 96391051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 26d4744105ceded409d94e0405823c13, type: 2}
+--- !u!4 &96391053
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 96391051}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11.936911, y: 3.0299997, z: -10.31197}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &167815282
 GameObject:
   m_ObjectHideFlags: 0
@@ -331,7 +380,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!224 &203889076
 RectTransform:
@@ -1149,13 +1198,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1028766267}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a91059a0ed968d34591cd72fa84b26b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   DitEneXrayMuurtje: {fileID: 0}
   XrayActive: 0
+  Effect: {fileID: 96391051}
 --- !u!114 &1028766276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1176,7 +1226,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1028766267}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 61289e0b1bd8e12418c374e2d5392854, type: 3}
   m_Name: 
@@ -1516,7 +1566,7 @@ GameObject:
   - component: {fileID: 1136286669}
   - component: {fileID: 1136286668}
   m_Layer: 0
-  m_Name: Global Volume
+  m_Name: 'Blacklight '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2174,6 +2224,7 @@ SceneRoots:
   - {fileID: 1568716861}
   - {fileID: 900854410}
   - {fileID: 203889076}
+  - {fileID: 96391053}
   - {fileID: 1136286669}
   - {fileID: 976852476}
   - {fileID: 1099167640}
