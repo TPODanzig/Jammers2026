@@ -3,6 +3,7 @@ using UnityEngine;
 public class food : MonoBehaviour
 {
     public BoxCollider2D grid;
+    [SerializeField] private CanvasSnake CanvasSnakeScript;
     private void Start()
     {
         RandomizePosition();
@@ -16,9 +17,8 @@ public class food : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player") 
-        {
-            RandomizePosition();
-        }
+        CanvasSnakeScript.FoodAmount++;
+        RandomizePosition();
+        
     }
 }

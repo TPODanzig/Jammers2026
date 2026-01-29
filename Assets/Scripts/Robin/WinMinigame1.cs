@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class WinMinigame1 : MonoBehaviour
 {
-    private GameObject parent;
     private MaskPickup parentScript;
 
     private void Start()
