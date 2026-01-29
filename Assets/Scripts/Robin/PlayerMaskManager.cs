@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class PlayerMaskManager : MonoBehaviour
@@ -23,8 +24,23 @@ public class PlayerMaskManager : MonoBehaviour
 
     private bool inputActive;
 
+    private BlackLighteffect activeBlacklightScript;
+    private CamoMask activeDisguiseScript;
+    private XrayScript activeXRayScript;
+
+
+    private void Start()
+    {
+        activeBlacklightScript = GetComponent<BlackLighteffect>();
+        activeDisguiseScript = GetComponent<CamoMask>();
+        activeXRayScript = GetComponent<XrayScript>();
+    }
+
     private void Update()
     {
+        RunDebug();
+        RunMasks();
+
         //check of je 1,2,3 of L mouse klikt
 
         if (Input.GetKey("1") && SMaskAmount >= 1 && SActiveMask != ActiveMask.BlackLight)
@@ -127,6 +143,44 @@ public class PlayerMaskManager : MonoBehaviour
             WearTimer.gameObject.SetActive(false);
             activeWearTimer = 0;
             maskLocked = false;
+        }
+    }
+
+    void RunMasks()
+    {
+        if (SWearingMask)
+        {
+            if (SActiveMask == ActiveMask.BlackLight)
+            {
+                activeDisguiseScript.CamoMaskOn = false;
+                activeXRayScript.XrayActive = false;
+            }
+            else if (SActiveMask == ActiveMask.Disguise)
+            {
+                activeDisguiseScript.CamoMaskOn = true;
+                activeXRayScript.XrayActive = false;
+            }
+            else if (SActiveMask == ActiveMask.XRay)
+            {
+                activeDisguiseScript.CamoMaskOn = false;
+                activeXRayScript.XrayActive = true;
+            }
+        }
+        else
+        {
+            activeDisguiseScript.CamoMaskOn = false;
+            activeXRayScript.XrayActive = false;
+        }
+    }
+
+    void RunDebug()
+    {
+        if (Application.isEditor)
+        {
+            if (Input.GetKeyDown(KeyCode.M))
+            {
+                SMaskAmount++;
+            }
         }
     }
 }

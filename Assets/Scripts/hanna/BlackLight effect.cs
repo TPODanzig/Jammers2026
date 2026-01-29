@@ -6,31 +6,11 @@ using UnityEngine.UI;
 
 public class BlackLighteffect : MonoBehaviour
 {
-    public  GameObject Volume;
-   public InputActionReference blacklight;
-    public Image Fill;
-
-    private void Update()
+    bool light;
+    public  GameObject Light;
+    private void Start()
     {
-        if (blacklight != null) 
-        {
-            Fill.fillAmount = blacklight.action.GetTimeoutCompletionPercentage();
-        }
-    }
-
-    private void OnEnable()
-    {
-        blacklight.action.performed += MaskActive;
+        if (Light.CompareTag("Light")) {  light = true; }
 
     }
-    private void OnDisable()
-    {
-        blacklight.action.performed -= MaskActive;
-
-    }
-    void MaskActive(InputAction.CallbackContext ctx) 
-    {
-        
-        Volume.SetActive(true);
-    } 
 }
