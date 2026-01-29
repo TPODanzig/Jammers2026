@@ -13,7 +13,7 @@ public class InteractionScript : MonoBehaviour
 
     private void Update()
     {
-        if (MaskPickup.MinigamingIt)
+            if (MaskPickup.MinigamingIt)
         {
             InteractionText.SetActive(false);
         }
@@ -23,7 +23,6 @@ public class InteractionScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Interactable"))
         {
-            //Debug.Log("bitch");
             InteractionText.SetActive(true);
             if (Input.GetKey("e"))
             {
@@ -31,7 +30,8 @@ public class InteractionScript : MonoBehaviour
                 {
                     other.GetComponent<MaskPickup>().PlayerInteraction();
                 }
-                else
+                else if (PlayerMaskManager.SWearingMask && 
+                PlayerMaskManager.SActiveMask == PlayerMaskManager.ActiveMask.XRay)
                 {
                     Destroy(other.gameObject);
                 }
@@ -42,7 +42,6 @@ public class InteractionScript : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        //Debug.Log("lasagna");
         InteractionText.SetActive(false);
     }
 }
