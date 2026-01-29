@@ -693,6 +693,7 @@ GameObject:
   m_Component:
   - component: {fileID: 886571235}
   - component: {fileID: 886571234}
+  - component: {fileID: 886571239}
   - component: {fileID: 886571238}
   - component: {fileID: 886571237}
   - component: {fileID: 886571233}
@@ -865,6 +866,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CamoMaskOn: 0
+--- !u!114 &886571239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886571229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61289e0b1bd8e12418c374e2d5392854, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BLMaskActive: 0
+  Volume: {fileID: 0}
+  blacklight: {fileID: 0}
+  Fill: {fileID: 0}
+  Light: {fileID: 0}
 --- !u!1 &939320511
 GameObject:
   m_ObjectHideFlags: 0
