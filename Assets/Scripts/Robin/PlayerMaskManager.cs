@@ -25,14 +25,14 @@ public class PlayerMaskManager : MonoBehaviour
     private bool inputActive;
 
     private BlackLighteffect activeBlacklightScript;
-    //private [DisguiseScript] activeDisguiseScript;
+    private CamoMask activeDisguiseScript;
     private XrayScript activeXRayScript;
 
 
     private void Start()
     {
         activeBlacklightScript = GetComponent<BlackLighteffect>();
-        //activeDisguiseScript = GetComponent<DisguiseScript>();
+        activeDisguiseScript = GetComponent<CamoMask>();
         activeXRayScript = GetComponent<XrayScript>();
     }
 
@@ -152,19 +152,23 @@ public class PlayerMaskManager : MonoBehaviour
         {
             if (SActiveMask == ActiveMask.BlackLight)
             {
+                activeDisguiseScript.CamoMaskOn = false;
                 activeXRayScript.XrayActive = false;
             }
             else if (SActiveMask == ActiveMask.Disguise)
             {
+                activeDisguiseScript.CamoMaskOn = true;
                 activeXRayScript.XrayActive = false;
             }
             else if (SActiveMask == ActiveMask.XRay)
             {
+                activeDisguiseScript.CamoMaskOn = false;
                 activeXRayScript.XrayActive = true;
             }
         }
         else
         {
+            activeDisguiseScript.CamoMaskOn = false;
             activeXRayScript.XrayActive = false;
         }
     }
