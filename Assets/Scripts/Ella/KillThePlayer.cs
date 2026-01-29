@@ -7,6 +7,7 @@ public class KillThePlayer : MonoBehaviour
     {
         if(CamoMask.Instance.CamoMaskOn == false)
         {
+            Checkpoint.Instance.OnHit();
             Debug.Log("Kill the paleyr here");
         }
         
