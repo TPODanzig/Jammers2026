@@ -49,15 +49,9 @@ public class MaskPickup : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay(Collider other)
+    public void PlayerInteraction()
     { 
-        if (InteractAction.IsPressed())
-        {
-            if (other.CompareTag("Player"))
-            {
-                MinigamingIt = true;
-            }
-        }
+        MinigamingIt = true;
     }
 
     void TriggerMinigame()

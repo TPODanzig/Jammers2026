@@ -19,7 +19,14 @@ public class InteractionScript : MonoBehaviour
             InteractionText.SetActive(true);
             if (Input.GetKey("e"))
             {
-                Destroy(other.gameObject);
+                if (other.GetComponent<MaskPickup>() != null)
+                {
+                    other.GetComponent<MaskPickup>().PlayerInteraction();
+                }
+                else
+                {
+                    Destroy(other.gameObject);
+                }
                 InteractionText.SetActive(false);
             }
         }

@@ -1217,6 +1217,106 @@ MonoBehaviour:
   XrayAction: {fileID: 2402407701173473970, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   DitEneXrayMuurtje: {fileID: 747573511}
   XrayActiveInt: 0
+--- !u!1001 &1515707078
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1013028567605476447, guid: b3aab9de99b174d41a8ea607f6defc27, type: 3}
+      propertyPath: Minigame1
+      value: 
+      objectReference: {fileID: 2797144752875352235, guid: 3c0d05273a732754b8f5aa44de566c13, type: 3}
+    - target: {fileID: 1712683614197249874, guid: b3aab9de99b174d41a8ea607f6defc27, type: 3}
+      propertyPath: m_Name
+      value: Mask
+      objectReference: {fileID: 0}
+    - target: {fileID: 8361156077691694298, guid: b3aab9de99b174d41a8ea607f6defc27, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9126969854568868851, guid: b3aab9de99b174d41a8ea607f6defc27, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.5668764
+      objectReference: {fileID: 0}
+    - target: {fileID: 9126969854568868851, guid: b3aab9de99b174d41a8ea607f6defc27, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 9126969854568868851, guid: b3aab9de99b174d41a8ea607f6defc27, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.0106392
+      objectReference: {fileID: 0}
+    - target: {fileID: 9126969854568868851, guid: b3aab9de99b174d41a8ea607f6defc27, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9126969854568868851, guid: b3aab9de99b174d41a8ea607f6defc27, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9126969854568868851, guid: b3aab9de99b174d41a8ea607f6defc27, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9126969854568868851, guid: b3aab9de99b174d41a8ea607f6defc27, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9126969854568868851, guid: b3aab9de99b174d41a8ea607f6defc27, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9126969854568868851, guid: b3aab9de99b174d41a8ea607f6defc27, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9126969854568868851, guid: b3aab9de99b174d41a8ea607f6defc27, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1712683614197249874, guid: b3aab9de99b174d41a8ea607f6defc27, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1515707085}
+  m_SourcePrefab: {fileID: 100100000, guid: b3aab9de99b174d41a8ea607f6defc27, type: 3}
+--- !u!1 &1515707079 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1712683614197249874, guid: b3aab9de99b174d41a8ea607f6defc27, type: 3}
+  m_PrefabInstance: {fileID: 1515707078}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &1515707085
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1515707079}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1602693324
 GameObject:
   m_ObjectHideFlags: 0
@@ -1417,3 +1517,4 @@ SceneRoots:
   - {fileID: 476700613}
   - {fileID: 387851095}
   - {fileID: 1602693327}
+  - {fileID: 1515707078}
