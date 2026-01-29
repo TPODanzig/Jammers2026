@@ -19,6 +19,8 @@ public class MaskPickup : MonoBehaviour
     [SerializeField] GameObject Minigame2;
     [SerializeField] GameObject Minigame3;
 
+    private GameObject activeMinigame;
+
     public static bool MinigamingIt;
 
     private void Start()
@@ -41,6 +43,10 @@ public class MaskPickup : MonoBehaviour
         {
             TriggerMinigame();
         }
+        else
+        {
+            Destroy(activeMinigame);
+        }
     }
 
     private void OnTriggerStay(Collider other)
@@ -56,28 +62,22 @@ public class MaskPickup : MonoBehaviour
 
     void TriggerMinigame()
     {
-        if (PlayerMaskManager.SMaskAmount == 0)
+        if (PlayerMaskManager.SMaskAmount == 0 && activeMinigame == null)
         {
-            Minigame1.SetActive(true);
+            activeMinigame = Instantiate(Minigame1, this.transform);
         }
-        else if (PlayerMaskManager.SMaskAmount == 1)
+        else if (PlayerMaskManager.SMaskAmount == 1 && activeMinigame == null)
         {
-            Minigame2.SetActive(true);
+            activeMinigame = Instantiate(Minigame2, this.transform);
         }
-        else if (PlayerMaskManager.SMaskAmount == 2)
+        else if (PlayerMaskManager.SMaskAmount == 2 && activeMinigame == null)
         {
-            Minigame3.SetActive(true);
-        }
-        else
-        {
-            Minigame1.SetActive(false);
-            Minigame2.SetActive(false);
-            Minigame3.SetActive(false);
+            activeMinigame = Instantiate(Minigame3, this.transform);
         }
     }
 
 
-    void CollectMask()
+    public void CollectMask()
     {
         Timer.countDown += 30;
         PlayerMaskManager.SMaskAmount++;

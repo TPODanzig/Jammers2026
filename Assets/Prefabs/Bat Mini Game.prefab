@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7498656501509671824}
   - component: {fileID: 1608610303463083337}
   - component: {fileID: 4300297316865282446}
+  - component: {fileID: 5308955934435488666}
   m_Layer: 0
   m_Name: portallll
   m_TagString: Untagged
@@ -123,6 +124,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1873.3528, y: 1033.7959}
   m_EdgeRadius: 0
+--- !u!114 &5308955934435488666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 175444386971474818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51788e570ef6f5647925cbe395fba87c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &419770938966117025
 GameObject:
   m_ObjectHideFlags: 0
@@ -1682,7 +1695,7 @@ GameObject:
   - component: {fileID: 4869934617832556766}
   m_Layer: 5
   m_Name: bat
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1838,7 +1851,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &4869934617832556766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1853,6 +1866,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 100
   rb: {fileID: 4128811045042049432}
+  StartPos: {x: 0, y: 0}
 --- !u!1 &4043581121001567181
 GameObject:
   m_ObjectHideFlags: 0
