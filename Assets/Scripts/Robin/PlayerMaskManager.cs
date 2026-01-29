@@ -25,7 +25,9 @@ public class PlayerMaskManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown("1") && SMaskAmount >= 1)
+        //check of je 1,2,3 of L mouse klikt
+
+        if (Input.GetKey("1") && SMaskAmount >= 1 && SActiveMask != ActiveMask.BlackLight)
         {
             if (SWearingMask)
             {
@@ -36,7 +38,7 @@ public class PlayerMaskManager : MonoBehaviour
                 SActiveMask = ActiveMask.BlackLight;
             }
         }
-        else if (Input.GetKeyDown("2") && SMaskAmount >= 2)
+        else if (Input.GetKey("2") && SMaskAmount >= 2 && SActiveMask != ActiveMask.Disguise)
         {
             if (SWearingMask)
             {
@@ -47,7 +49,7 @@ public class PlayerMaskManager : MonoBehaviour
                 SActiveMask = ActiveMask.Disguise;
             }
         }
-        else if (Input.GetKeyDown("3") && SMaskAmount >= 3)
+        else if (Input.GetKey("3") && SMaskAmount >= 3 && SActiveMask != ActiveMask.Disguise)
         {
             if (SWearingMask)
             {
@@ -59,10 +61,18 @@ public class PlayerMaskManager : MonoBehaviour
             }
         }
 
-        else if (Input.GetKey(KeyCode.Mouse0))
+        else if (Input.GetKey(KeyCode.Mouse0) && SActiveMask != ActiveMask.None)
         {
             inputActive = true;
         }
+
+        else //reset mask lock en de imput bool als je niks aanklikt
+        {
+            inputActive = false;
+            maskLocked = false;
+        }
+
+        //Als je iets klikt, start de timer
 
         if (inputActive && !maskLocked)
         {
@@ -70,6 +80,7 @@ public class PlayerMaskManager : MonoBehaviour
             WearTimer.value = activeWearTimer;
             activeWearTimer += Time.deltaTime;
 
+            //Timer klaar, selecteer je actie
             if (activeWearTimer > 1)
             {
                 if (Input.GetKeyDown("1"))
@@ -98,19 +109,20 @@ public class PlayerMaskManager : MonoBehaviour
 
                 activeWearTimer = 0;
                 maskLocked = true;
+                //zet de timer weer op 0 en lock de mask knoppen totdat je ze los laat (om loops te verkomen)
             }
         }
 
-        else if (maskLocked)
+        else if (maskLocked) //laat mask niet zien als het locked is
         {
             WearTimer.gameObject.SetActive(false);
         }
-        else if (activeWearTimer > 0 && !inputActive)
+        else if (activeWearTimer > 0 && !inputActive) //als je vroegtijdig loslaat, loopt de timer snel leeg
         {
             WearTimer.value = activeWearTimer;
             activeWearTimer -= Time.deltaTime * 2;
         }
-        else if (activeWearTimer <= 0 && !inputActive)
+        else if (activeWearTimer <= 0 && !inputActive) //rest mode hier
         {
             WearTimer.gameObject.SetActive(false);
             activeWearTimer = 0;
