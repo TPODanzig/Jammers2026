@@ -5,14 +5,18 @@ public class XrayScript : MonoBehaviour
     [SerializeField] GameObject DitEneXrayMuurtje;
     public bool XrayActive = false;
     public GameObject Volume;
-    
-    [SerializeField] Material OpagueMat;
-    [SerializeField] Material TransMat;
+
+    private Material[] Mat;
 
     void FixedUpdate()
     {
         if (DitEneXrayMuurtje != null)
         {
+            if (Mat == null)
+            {
+                Mat = DitEneXrayMuurtje.GetComponent<Renderer>().materials;
+            }
+
             if (PlayerMaskManager.SWearingMask &&
             PlayerMaskManager.SActiveMask == PlayerMaskManager.ActiveMask.XRay)
             {
@@ -36,7 +40,10 @@ public class XrayScript : MonoBehaviour
 
             if (DitEneXrayMuurtje != null)
             {
-                DitEneXrayMuurtje.GetComponent<Renderer>().material = TransMat;
+                foreach (Material mat in Mat)
+                {
+                    mat.color = new Color(mat.color.r, mat.color.g, mat.color.g, 0.8f);
+                }
             }
         }
         else if(!XrayActive)
@@ -46,8 +53,13 @@ public class XrayScript : MonoBehaviour
 
             if (DitEneXrayMuurtje != null)
             {
-                DitEneXrayMuurtje.GetComponent<Renderer>().material = OpagueMat;
+                foreach (Material mat in Mat)
+                {
+                    mat.color = new Color(mat.color.r, mat.color.g, mat.color.g, 1);
+                }
             }
         }
+
+        DitEneXrayMuurtje.GetComponent<Renderer>().materials = Mat;
     }
 }
