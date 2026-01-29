@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class PlayerMaskManager : MonoBehaviour
@@ -28,6 +27,10 @@ public class PlayerMaskManager : MonoBehaviour
     private CamoMask activeDisguiseScript;
     private XrayScript activeXRayScript;
 
+    //audio bs
+    [SerializeField] GameObject aPlayer;
+    private GameObject ActiveAPlayer;
+    private AudioPlayer ActiveAPlayerComp;
 
     private void Start()
     {
@@ -65,7 +68,7 @@ public class PlayerMaskManager : MonoBehaviour
                 SActiveMask = ActiveMask.Disguise;
             }
         }
-        else if (Input.GetKey("3") && SMaskAmount >= 3 && SActiveMask != ActiveMask.Disguise)
+        else if (Input.GetKey("3") && SMaskAmount >= 3 && SActiveMask != ActiveMask.XRay)
         {
             if (SWearingMask)
             {
@@ -95,6 +98,14 @@ public class PlayerMaskManager : MonoBehaviour
             WearTimer.gameObject.SetActive(true);
             WearTimer.value = activeWearTimer;
             activeWearTimer += Time.deltaTime;
+
+            if (ActiveAPlayer == null)
+            {
+                //Speel audio
+                ActiveAPlayer = Instantiate(aPlayer);
+                ActiveAPlayerComp = ActiveAPlayer.GetComponent<AudioPlayer>();
+                ActiveAPlayerComp.AudioPlayerResource = AudioPlayer.AudioResource.EquipMask;
+            }
 
             //Timer klaar, selecteer je actie
             if (activeWearTimer > 1)
@@ -132,17 +143,20 @@ public class PlayerMaskManager : MonoBehaviour
         else if (maskLocked) //laat mask niet zien als het locked is
         {
             WearTimer.gameObject.SetActive(false);
+            Destroy(ActiveAPlayer);
         }
         else if (activeWearTimer > 0 && !inputActive) //als je vroegtijdig loslaat, loopt de timer snel leeg
         {
             WearTimer.value = activeWearTimer;
             activeWearTimer -= Time.deltaTime * 2;
+            Destroy(ActiveAPlayer);
         }
         else if (activeWearTimer <= 0 && !inputActive) //rest mode hier
         {
             WearTimer.gameObject.SetActive(false);
             activeWearTimer = 0;
             maskLocked = false;
+            Destroy(ActiveAPlayer);
         }
     }
 
