@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5123443595411750133}
   - component: {fileID: 3983767677356210015}
   m_Layer: 0
-  m_Name: Fancy
+  m_Name: security
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,8 +27,8 @@ Transform:
   m_GameObject: {fileID: 7965058553920792078}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.924695, y: 2.614418, z: 2.2930946}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -10.924695, y: 6.7372, z: 2.2930946}
+  m_LocalScale: {x: 0.25312, y: 0.25312, z: 0.25312}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
