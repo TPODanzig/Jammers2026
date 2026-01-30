@@ -253,7 +253,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -482,7 +482,7 @@ GameObject:
   - component: {fileID: 1630565303}
   - component: {fileID: 1630565302}
   m_Layer: 0
-  m_Name: CollorManager
+  m_Name: ColourManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -505,7 +505,11 @@ MonoBehaviour:
   - {fileID: 304387310553800616, guid: 53e3dc5f80feecb4485f44913d527c90, type: 3}
   - {fileID: 775741102625100640, guid: fab96d2fb58ca0246bec32315225da5b, type: 3}
   - {fileID: 2589379344113173977, guid: e3735741bc7802b46b0bf24eb4b3e00c, type: 3}
-  items: []
+  items:
+  - {fileID: 4334860790441243817, guid: 84cc61e502bd2b34e9d55286eebe1394, type: 3}
+  - {fileID: 2316988591180783986, guid: 25f14785345fb334f98b109830e91a12, type: 3}
+  - {fileID: 910291861442653072, guid: 44df0cddf78c08b4aa1ed7f9db6c4f6e, type: 3}
+  - {fileID: 3968268498374278948, guid: 03c0800d04a9d174f8639d8127b8d001, type: 3}
 --- !u!4 &1630565303
 Transform:
   m_ObjectHideFlags: 0
