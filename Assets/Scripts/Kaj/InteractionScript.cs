@@ -39,10 +39,7 @@ public class InteractionScript : MonoBehaviour
                 ActiveAPlayerComp = ActiveAPlayer.GetComponent<AudioPlayer>();
                 ActiveAPlayerComp.AudioPlayerResource = AudioPlayer.AudioResource.Interact;
 
-                if (other.GetComponent<Togglelore>())
-                {
-                    other.GetComponent<Togglelore>().kurkboard();
-                }
+                
                 if (other.GetComponent<Door>() != null)
                 {
                     other.GetComponent<Door>().OpenDoor();

@@ -5,25 +5,21 @@ public class Togglelore : MonoBehaviour
     public int counter = 0;
     public GameObject text;
 
-    private void FixedUpdate()
+    private void OnTriggerStay(Collider other)
     {
-        if (counter > 1)
-        {
-            counter = 0;
-        }
-    }
-    public void kurkboard() 
-    {
-        if (counter == 0)
+        if (other.CompareTag("Player"))
         {
             text.SetActive(true);
-            counter++;
-        }
-        else if (counter == 1)
-        {
-            text.SetActive(false);
-            counter++;
         }
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            text.SetActive(false);
+        }
+    }
+
 }
 
