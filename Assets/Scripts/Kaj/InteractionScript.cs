@@ -19,12 +19,13 @@ public class InteractionScript : MonoBehaviour
         InteractionText.SetActive(false);
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
             if (MaskPickup.MinigamingIt)
         {
             InteractionText.SetActive(false);
         }
+        dabidoo();
     }
 
     void OnTriggerStay(Collider other)
@@ -67,7 +68,7 @@ public class InteractionScript : MonoBehaviour
         InteractionText.SetActive(false);
     }
 
-    private void FixedUpdate()
+    void dabidoo()
     {
         InteractionText.SetActive(false);
     }
