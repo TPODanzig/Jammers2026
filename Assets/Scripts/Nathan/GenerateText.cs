@@ -7,27 +7,33 @@ using UnityEngine;
 
 public class GenerateText : MonoBehaviour
 {
+    public static GenerateText generateText;
     [SerializeField] private TextMeshProUGUI dialogText;
     [SerializeField] private float letterDelay = 0.05f; // adjust this value
-    public string[] sentences;
+    public string sentence;
+    public float upTimer;
     private Queue<string> queue;
 
-    private void Start()
+    private void Awake()
     {
-        queue = new Queue<string>();
-
-        foreach (string sentence in sentences)
-        {
-            queue.Enqueue(sentence);
-        }
+        generateText = this;
     }
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        upTimer -= Time.deltaTime;
+        if (upTimer <= 0)
         {
-            StartCoroutine(Letters());
+            gameObject.SetActive(false);
         }
+    }
+
+    public void StartLetters()
+    {
+        queue = new Queue<string>();
+        queue.Enqueue(sentence);
+
+        StartCoroutine(Letters());
     }
 
     IEnumerator Letters()

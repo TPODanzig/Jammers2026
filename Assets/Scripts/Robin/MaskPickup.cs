@@ -76,6 +76,10 @@ public class MaskPickup : MonoBehaviour
 
     public void CollectMask()
     {
+        GenerateText.generateText.sentence = "Hold g to use current mask. Switch current mask with 1, 2 and 3";
+        GenerateText.generateText.gameObject.SetActive(true);
+        GenerateText.generateText.upTimer = 4;
+        GenerateText.generateText.StartLetters();
         Timer.countDown += 30;
         PlayerMaskManager.SMaskAmount++;
         Destroy(this.gameObject);
