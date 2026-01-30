@@ -9,9 +9,14 @@ public class CharacterMovement : MonoBehaviour
     private CharacterController cc;
     private Vector3 velocity;
 
+    private bool walking;
+
+    private AudioSource walkAudio;
+
     private void Start()
     {
         cc = GetComponent<CharacterController>();
+        walkAudio = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -26,6 +31,28 @@ public class CharacterMovement : MonoBehaviour
             }
             velocity.y += gravity * Time.deltaTime;
             cc.Move(velocity * Time.deltaTime);
+        }
+
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+        {
+            walking = true;
+        }
+        else
+        {
+            walking = false;
+        }
+
+        if (walking)
+        {
+            if (!walkAudio.isPlaying)
+            {
+                walkAudio.Play();
+                walkAudio.pitch = Random.Range(.75f, 1f);
+            }
+        }
+        else
+        {
+            walkAudio.Stop();
         }
     }
 

@@ -1,11 +1,17 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class InteractionScript : MonoBehaviour
 {
     public GameObject InteractionText;
     private Door door;
+
+    //audio bs
+    [SerializeField] GameObject aPlayer;
+    private GameObject ActiveAPlayer;
+    private AudioPlayer ActiveAPlayerComp;
 
     private void Start()
     {
@@ -27,6 +33,12 @@ public class InteractionScript : MonoBehaviour
             InteractionText.SetActive(true);
             if (Input.GetKey("e"))
             {
+                //Speel audio
+                ActiveAPlayer = Instantiate(aPlayer);
+                ActiveAPlayerComp = ActiveAPlayer.GetComponent<AudioPlayer>();
+                ActiveAPlayerComp.AudioPlayerResource = AudioPlayer.AudioResource.Interact;
+
+
                 if (other.GetComponent<Door>() != null)
                 {
                     other.GetComponent<Door>().OpenDoor();
