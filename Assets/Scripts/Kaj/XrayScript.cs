@@ -62,7 +62,7 @@ public class XrayScript : MonoBehaviour
             {
                 foreach (Material mat in Mat)
                 {
-                    mat.color = new Color(mat.color.r, mat.color.g, mat.color.g, 0.8f);
+                    mat.color = new Color(mat.color.r, mat.color.g, mat.color.g, 0.3f);
                 }
             }
 
@@ -70,7 +70,7 @@ public class XrayScript : MonoBehaviour
             {
                 foreach (Material mat in VaultMat)
                 {
-                    mat.color = new Color(mat.color.r, mat.color.g, mat.color.g, 0.5f);
+                    mat.color = new Color(mat.color.r, mat.color.g, mat.color.g, 0.1f);
                 }
             }
         }
