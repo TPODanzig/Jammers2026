@@ -11,6 +11,13 @@ public class BlackLighteffect : MonoBehaviour
     bool light;
     public GameObject Light;
 
+    private GameObject[] LightObjects;
+
+    private void Start()
+    {
+        LightObjects = GameObject.FindGameObjectsWithTag("Light");
+    }
+
     private void Update()
     {
         if (BLMaskActive)
@@ -26,19 +33,18 @@ public class BlackLighteffect : MonoBehaviour
     private void Run()
     {
         Volume.SetActive(true);
-        if (Light.CompareTag("Light")) 
-        { 
-            light = true;
+        foreach (GameObject obj in LightObjects)
+        {
+            obj.SetActive(true);
         }
     }
 
     private void NoRun()
     {
-        //hanna fix dit ooit plz
-        //Volume.SetActive(false);
-        //if (Light.CompareTag("Light"))
-        //{
-        //    light = false;
-        //}
+        Volume.SetActive(false);
+        foreach (GameObject obj in LightObjects)
+        {
+            obj.SetActive(false);
+        }
     }
 }

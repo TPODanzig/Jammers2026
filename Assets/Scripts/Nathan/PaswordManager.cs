@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class PaswordManager : MonoBehaviour
@@ -5,6 +6,8 @@ public class PaswordManager : MonoBehaviour
     public static PaswordManager paswordManager;
     public string password;
     [SerializeField] private string[] digits;
+
+    [SerializeField] TMP_Text PasswordText;
 
     private void Awake()
     {
@@ -17,5 +20,7 @@ public class PaswordManager : MonoBehaviour
             password += Random.Range(0, digits.Length);
         }
         Debug.Log(password);
+
+        PasswordText.text = password;
     }
 }
