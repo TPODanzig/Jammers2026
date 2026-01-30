@@ -22,7 +22,7 @@ public class CamoMiniGame : MonoBehaviour
     private void Start()
     {
         camoColor = Colorss.Green;
-        parentScript = transform.parent.transform.parent.transform.GetComponentInParent<MaskPickup>();
+        //parentScript = transform.parent.transform.parent.transform.GetComponentInParent<MaskPickup>();
     }
 
 
@@ -61,8 +61,8 @@ public class CamoMiniGame : MonoBehaviour
         if(camoColor == Colorss.Red)
         {
             amount += 1;
-            parentScript.CollectMask();
-            MaskPickup.MinigamingIt = false;
+            //parentScript.CollectMask();
+            //MaskPickup.MinigamingIt = false;
             Destroy(canvas, 1f);
         }
         
