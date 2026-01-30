@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -35,6 +36,10 @@ public class PlayerMaskManager : MonoBehaviour
     [SerializeField] Image MaskIcon1;
     [SerializeField] Image MaskIcon2;
     [SerializeField] Image MaskIcon3;
+
+    [SerializeField] TMP_Text Icon1Text;
+    [SerializeField] TMP_Text Icon2Text;
+    [SerializeField] TMP_Text Icon3Text;
 
     [SerializeField] RawImage EquipIcon;
 
@@ -258,6 +263,31 @@ public class PlayerMaskManager : MonoBehaviour
             MaskIcon1.color = Color.black;
             MaskIcon2.color = Color.black;
             MaskIcon3.color = Color.white;
+        }
+
+        if (SActiveMask == ActiveMask.None)
+        {
+            Icon1Text.gameObject.SetActive(false);
+            Icon2Text.gameObject.SetActive(false);
+            Icon3Text.gameObject.SetActive(false);
+        }
+        else if (SActiveMask == ActiveMask.BlackLight)
+        {
+            Icon1Text.gameObject.SetActive(true);
+            Icon2Text.gameObject.SetActive(false);
+            Icon3Text.gameObject.SetActive(false);
+        }
+        else if (SActiveMask == ActiveMask.Disguise)
+        {
+            Icon1Text.gameObject.SetActive(false);
+            Icon2Text.gameObject.SetActive(true);
+            Icon3Text.gameObject.SetActive(false);
+        }
+        else if (SActiveMask == ActiveMask.XRay)
+        {
+            Icon1Text.gameObject.SetActive(false);
+            Icon2Text.gameObject.SetActive(false);
+            Icon3Text.gameObject.SetActive(true);
         }
     }
 
