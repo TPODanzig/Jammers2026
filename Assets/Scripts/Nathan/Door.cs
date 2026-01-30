@@ -6,6 +6,7 @@ public class Door : MonoBehaviour
     [SerializeField] private Vector3 doorRotation;
     [SerializeField] private float openTimer = 0.6f;
     public bool unlockDoor = false;
+    public bool stopRotating = false;
     private void FixedUpdate()
     {
         if (keypad != null)
@@ -30,7 +31,11 @@ public class Door : MonoBehaviour
 
     public void OpenDoor()
     {
+        if (stopRotating == false)
+        {
             transform.Rotate(doorRotation * 4);
+            stopRotating = true;
+        }
     }
 }
 

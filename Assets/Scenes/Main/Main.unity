@@ -1240,6 +1240,14 @@ PrefabInstance:
       propertyPath: DitEneXrayMuurtje
       value: 
       objectReference: {fileID: 1291635796}
+    - target: {fileID: 6323639863663998465, guid: c8fdaf243131ba743a175d07c04ca789, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7668396638226935737, guid: c8fdaf243131ba743a175d07c04ca789, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8045981689820977696, guid: c8fdaf243131ba743a175d07c04ca789, type: 3}
       propertyPath: InteractionText
       value: 
