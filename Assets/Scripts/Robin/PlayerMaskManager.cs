@@ -54,12 +54,10 @@ public class PlayerMaskManager : MonoBehaviour
             if (SWearingMask)
             {
                 inputActive = true;
-                //going to wear mask 1
             }
             else
             {
                 SActiveMask = ActiveMask.BlackLight;
-                //wearin mask 1
             }
         }
         else if (Input.GetKey("2") && SMaskAmount >= 2 && SActiveMask != ActiveMask.Disguise)
@@ -67,12 +65,10 @@ public class PlayerMaskManager : MonoBehaviour
             if (SWearingMask)
             {
                 inputActive = true;
-                //going to wear mask 2
             }
             else
             {
                 SActiveMask = ActiveMask.Disguise;
-                //wearin mask 2
             }
         }
         else if (Input.GetKey("3") && SMaskAmount >= 3 && SActiveMask != ActiveMask.XRay)
@@ -80,19 +76,16 @@ public class PlayerMaskManager : MonoBehaviour
             if (SWearingMask)
             {
                 inputActive = true;
-                //going to wear mask 3
             }
             else
             {
                 SActiveMask = ActiveMask.XRay;
-                //wearin mask 3
             }
         }
 
         else if (Input.GetKey(KeyCode.G) && SActiveMask != ActiveMask.None)
         {
             inputActive = true;
-            //wearing / unwearing mask
         }
 
         else //reset mask lock en de imput bool als je niks aanklikt
