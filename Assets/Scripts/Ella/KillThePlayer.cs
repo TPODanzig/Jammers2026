@@ -10,6 +10,7 @@ public class KillThePlayer : MonoBehaviour
             Checkpoint.Instance.OnHit();
             Debug.Log("Kill the paleyr here");
         }
+        Debug.Log("kill the player test");
         
     }
 }
