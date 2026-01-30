@@ -9,6 +9,11 @@ public class Timer : MonoBehaviour
     public static float countDown = 60;
     private float roundCountDown ;
 
+    private void Start()
+    {
+        countDown = 60;
+    }
+
     private void FixedUpdate()
     {
         if (!MaskPickup.MinigamingIt)

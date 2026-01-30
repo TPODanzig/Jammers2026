@@ -32,6 +32,10 @@ public class PlayerMaskManager : MonoBehaviour
     private GameObject ActiveAPlayer;
     private AudioPlayer ActiveAPlayerComp;
 
+    [SerializeField] RawImage MaskIcon1;
+    [SerializeField] RawImage MaskIcon2;
+    [SerializeField] RawImage MaskIcon3;
+
     private void Start()
     {
         activeBlacklightScript = GetComponent<BlackLighteffect>();
@@ -47,6 +51,7 @@ public class PlayerMaskManager : MonoBehaviour
     {
         RunDebug();
         RunMasks();
+        RunIcons();
 
         //check of je 1,2,3 of L mouse klikt
         if (Input.GetKey("1") && SMaskAmount >= 1 && SActiveMask != ActiveMask.BlackLight)
@@ -191,6 +196,61 @@ public class PlayerMaskManager : MonoBehaviour
             activeBlacklightScript.BLMaskActive = false;
             activeDisguiseScript.CamoMaskOn = false;
             activeXRayScript.XrayActive = false;
+        }
+    }
+
+    void RunIcons()
+    {
+        if (SMaskAmount >= 3)
+        {
+            MaskIcon3.gameObject.SetActive(true);
+            MaskIcon2.gameObject.SetActive(true);
+            MaskIcon1.gameObject.SetActive(true);
+        }
+        if (SMaskAmount < 3)
+        {
+            MaskIcon3.gameObject.SetActive(false);
+
+            MaskIcon2.gameObject.SetActive(true);
+            MaskIcon1.gameObject.SetActive(true);
+        }
+        if (SMaskAmount < 2)
+        {
+            MaskIcon3.gameObject.SetActive(false);
+            MaskIcon2.gameObject.SetActive(false);
+
+            MaskIcon1.gameObject.SetActive(true);
+        }
+        if (SMaskAmount < 1)
+        {
+            MaskIcon3.gameObject.SetActive(false);
+            MaskIcon2.gameObject.SetActive(false);
+            MaskIcon1.gameObject.SetActive(false);
+        }
+
+        if (SActiveMask == ActiveMask.None)
+        {
+            MaskIcon1.color = Color.black;
+            MaskIcon2.color = Color.black;
+            MaskIcon3.color = Color.black;
+        }
+        else if (SActiveMask == ActiveMask.BlackLight)
+        {
+            MaskIcon1.color = Color.white;
+            MaskIcon2.color = Color.black;
+            MaskIcon3.color = Color.black;
+        }
+        else if (SActiveMask == ActiveMask.Disguise)
+        {
+            MaskIcon1.color = Color.black;
+            MaskIcon2.color = Color.white;
+            MaskIcon3.color = Color.black;
+        }
+        else if (SActiveMask == ActiveMask.XRay)
+        {
+            MaskIcon1.color = Color.black;
+            MaskIcon2.color = Color.black;
+            MaskIcon3.color = Color.white;
         }
     }
 
