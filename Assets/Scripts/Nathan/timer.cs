@@ -11,7 +11,7 @@ public class Timer : MonoBehaviour
 
     private void Start()
     {
-        countDown = 60;
+        countDown = 600;
     }
 
     private void FixedUpdate()
