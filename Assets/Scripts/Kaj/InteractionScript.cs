@@ -1,7 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using static UnityEditor.Experimental.GraphView.GraphView;
+using UnityEngine.SceneManagement;
 
 public class InteractionScript : MonoBehaviour
 {
@@ -51,7 +50,7 @@ public class InteractionScript : MonoBehaviour
                 }
                 else if (other.gameObject == vaultDeur)
                 {
-                    Debug.Log("Game win");
+                    SceneManager.LoadScene("Win Scene");
                 }
                 else if (PlayerMaskManager.SWearingMask &&
                 PlayerMaskManager.SActiveMask == PlayerMaskManager.ActiveMask.XRay)
