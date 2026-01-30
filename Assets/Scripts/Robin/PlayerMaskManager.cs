@@ -45,7 +45,6 @@ public class PlayerMaskManager : MonoBehaviour
         RunMasks();
 
         //check of je 1,2,3 of L mouse klikt
-        Debug.Log(Input.anyKeyDown);
         if (Input.GetKey("1") && SMaskAmount >= 1 && SActiveMask != ActiveMask.BlackLight)
         {
             if (SWearingMask)
