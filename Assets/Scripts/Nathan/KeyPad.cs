@@ -7,6 +7,7 @@ public class KeyPad : MonoBehaviour
     [SerializeField] TextMeshProUGUI keyCodeText;
     [SerializeField] Door door;
     public GameObject keyPad;
+    public bool inRange = false;
     public int buttonsPressed;
     public string pasword;
 
@@ -19,6 +20,7 @@ public class KeyPad : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             keyPad.SetActive(true);
+            inRange = true;
         }
     }
 
@@ -27,6 +29,7 @@ public class KeyPad : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             keyPad.SetActive(false);
+            inRange = false;
         }
     }
 }
