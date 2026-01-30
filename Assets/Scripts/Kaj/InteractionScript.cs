@@ -49,4 +49,9 @@ public class InteractionScript : MonoBehaviour
     {
         InteractionText.SetActive(false);
     }
+
+    private void FixedUpdate()
+    {
+        InteractionText.SetActive(false);
+    }
 }
