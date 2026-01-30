@@ -4,46 +4,70 @@ using UnityEngine.UI;
 public class SpriteMatchGame : MonoBehaviour
 {
     public Image targetImage; // de sprite die bovenaan staat
-    public Button[] buttons; // de buttons die je moet matchen
     public Sprite[] sprites; // alle mogelijke sprites
     private Sprite currentTarget;
-
+    public GameObject test;
+    public Sprite[] ItemSprites;  
+    public Image[] targetSprites;
+    public RectTransform canvasRect;
+    public GameObject itemPrefab;
     void Start()
     {
-        SetupButtons();
         SetRandomTarget();
+        ItemSetRandomTarget();
+        SpawnItems();
     }
-
-    void SetupButtons()
-    {
-        for (int i = 0; i < buttons.Length; i++)
-        {
-            int index = i; // belangrijke trick voor closures
-            buttons[i].onClick.AddListener(() => CheckMatch(index));
-            buttons[i].image.sprite = sprites[i]; // zet sprite op de button
-        }
-    }
-
     void SetRandomTarget()
     {
         int randomIndex = Random.Range(0, sprites.Length);
         currentTarget = sprites[randomIndex];
         targetImage.sprite = currentTarget;
     }
-
-    void CheckMatch(int buttonIndex)
+    void ItemSetRandomTarget()
     {
-        if (buttons[buttonIndex].image.sprite == currentTarget)
+        Random.Range(targetSprites.Length, ItemSprites.Length);
+        
+    }
+
+    public Sprite[] itemSprites;
+
+    public int spawnCount = 5;
+
+
+
+    void SpawnItems()
+    {
+        for (int i = 0; i < spawnCount; i++)
         {
-            Debug.Log("Correct!");
-            SetRandomTarget(); // nieuwe target
-        }
-        else
-        {
-            Debug.Log("Fout! Probeer opnieuw.");
+            GameObject item = Instantiate(itemPrefab, canvasRect);
+
+            Image img = item.GetComponent<Image>();
+            img.sprite = itemSprites[Random.Range(0, itemSprites.Length)];
+
+            RectTransform itemRect = item.GetComponent<RectTransform>();
+            itemRect.anchoredPosition = GetRandomPosition(itemRect);
         }
     }
-}
 
+    Vector2 GetRandomPosition(RectTransform item)
+    {
+        float x = Random.Range(
+            -canvasRect.rect.width / 2 + item.rect.width / 2,
+             canvasRect.rect.width / 2 - item.rect.width / 2
+        );
+
+        float y = Random.Range(
+            -canvasRect.rect.height / 2 + item.rect.height / 2,
+             canvasRect.rect.height / 2 - item.rect.height / 2
+        );
+
+        return new Vector2(x, y);
+    }
+    public int score = 0;
+
+  
+
+
+}
 
 
