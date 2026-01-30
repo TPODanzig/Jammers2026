@@ -36,6 +36,8 @@ public class PlayerMaskManager : MonoBehaviour
     [SerializeField] Image MaskIcon2;
     [SerializeField] Image MaskIcon3;
 
+    [SerializeField] RawImage EquipIcon;
+
     private void Start()
     {
         activeBlacklightScript = GetComponent<BlackLighteffect>();
@@ -226,6 +228,11 @@ public class PlayerMaskManager : MonoBehaviour
             MaskIcon3.gameObject.SetActive(false);
             MaskIcon2.gameObject.SetActive(false);
             MaskIcon1.gameObject.SetActive(false);
+            EquipIcon.gameObject.SetActive(false);
+        }
+        else
+        {
+            EquipIcon.gameObject.SetActive(true);
         }
 
         if (SActiveMask == ActiveMask.None)
