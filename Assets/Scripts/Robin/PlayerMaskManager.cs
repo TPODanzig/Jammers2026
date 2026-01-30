@@ -37,6 +37,10 @@ public class PlayerMaskManager : MonoBehaviour
         activeBlacklightScript = GetComponent<BlackLighteffect>();
         activeDisguiseScript = GetComponent<CamoMask>();
         activeXRayScript = GetComponent<XrayScript>();
+
+        SWearingMask = false;
+        SActiveMask = ActiveMask.None;
+        SMaskAmount = 0;
     }
 
     private void Update()
