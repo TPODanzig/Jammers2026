@@ -23,11 +23,6 @@ public class Checkpoint : MonoBehaviour
             Destroy(gameObject); // Voorkom dubbele instanties
         }
     }
-    
-    private void Update()
-    {
-        Debug.Log(checkPointTransform.position);
-    }
 
 
     public void OnHit()
