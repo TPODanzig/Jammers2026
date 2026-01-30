@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
         }            
         
         string activeSceneName = SceneManager.GetActiveScene().name;
-        if (Input.GetMouseButton(1) || activeSceneName != "Main")
+        if (activeSceneName != "Main")
         {
             Cursor.lockState = CursorLockMode.None;
             PlayerMaskManager.SMaskAmount = 0;
