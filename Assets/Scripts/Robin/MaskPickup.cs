@@ -76,9 +76,20 @@ public class MaskPickup : MonoBehaviour
 
     public void CollectMask()
     {
-        GenerateText.generateText.sentence = "Hold g to use current mask. Switch current mask with 1, 2 and 3";
+        if (PlayerMaskManager.SMaskAmount == 0)
+        {
+            GenerateText.generateText.sentence = "You got the blacklight mask! With this you can see things invisible to the naked eye!";
+        }
+        else if (PlayerMaskManager.SMaskAmount == 1)
+        {
+            GenerateText.generateText.sentence = "You got the camouflage mask! No camera will be able to spot you with this!";
+        }
+        else
+        {
+            GenerateText.generateText.sentence = "You got the XRay mask! You can now see what's behind certain walls, you should find the safe!";
+        }
         GenerateText.generateText.gameObject.SetActive(true);
-        GenerateText.generateText.upTimer = 4;
+        GenerateText.generateText.upTimer = 7;
         GenerateText.generateText.StartLetters();
         Timer.countDown += 30;
         PlayerMaskManager.SMaskAmount++;
