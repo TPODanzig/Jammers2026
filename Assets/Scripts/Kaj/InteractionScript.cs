@@ -13,6 +13,8 @@ public class InteractionScript : MonoBehaviour
     private GameObject ActiveAPlayer;
     private AudioPlayer ActiveAPlayerComp;
 
+    [SerializeField] GameObject vaultDeur;
+
     private void Start()
     {
         InteractionText.SetActive(false);
@@ -43,11 +45,15 @@ public class InteractionScript : MonoBehaviour
                 {
                     other.GetComponent<Door>().OpenDoor();
                 }
-                if (other.GetComponent<MaskPickup>() != null)
+                else if (other.GetComponent<MaskPickup>() != null)
                 {
                     other.GetComponent<MaskPickup>().PlayerInteraction();
                 }
-                else if (PlayerMaskManager.SWearingMask && 
+                else if (other.gameObject == vaultDeur)
+                {
+                    Debug.Log("Game win");
+                }
+                else if (PlayerMaskManager.SWearingMask &&
                 PlayerMaskManager.SActiveMask == PlayerMaskManager.ActiveMask.XRay)
                 {
                     Destroy(other.gameObject);

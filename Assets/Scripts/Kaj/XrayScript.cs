@@ -3,10 +3,12 @@ using UnityEngine;
 public class XrayScript : MonoBehaviour
 {
     [SerializeField] GameObject DitEneXrayMuurtje;
+    [SerializeField] GameObject DitEneVaultDeurtje;
     public bool XrayActive = false;
     public GameObject Volume;
 
     private Material[] Mat;
+    private Material[] VaultMat;
 
     void FixedUpdate()
     {
@@ -27,7 +29,25 @@ public class XrayScript : MonoBehaviour
                 DitEneXrayMuurtje.gameObject.tag = "Untagged";
             }
         }
-            XrayActivate();
+
+
+        if (DitEneVaultDeurtje != null)
+        {
+            if (VaultMat == null)
+            {
+                VaultMat = DitEneVaultDeurtje.GetComponent<Renderer>().materials;
+            }
+            if (PlayerMaskManager.SWearingMask &&
+            PlayerMaskManager.SActiveMask == PlayerMaskManager.ActiveMask.XRay)
+            {
+                DitEneVaultDeurtje.gameObject.tag = "Interactable";
+            }
+            else
+            {
+                DitEneVaultDeurtje.gameObject.tag = "Untagged";
+            }
+        }
+        XrayActivate();
     }
 
     public void XrayActivate()
@@ -45,6 +65,14 @@ public class XrayScript : MonoBehaviour
                     mat.color = new Color(mat.color.r, mat.color.g, mat.color.g, 0.8f);
                 }
             }
+
+            if (DitEneVaultDeurtje != null)
+            {
+                foreach (Material mat in VaultMat)
+                {
+                    mat.color = new Color(mat.color.r, mat.color.g, mat.color.g, 0.5f);
+                }
+            }
         }
         else if(!XrayActive)
         {
@@ -58,11 +86,19 @@ public class XrayScript : MonoBehaviour
                     mat.color = new Color(mat.color.r, mat.color.g, mat.color.g, 1);
                 }
             }
+            if (DitEneVaultDeurtje != null)
+            {
+                foreach (Material mat in VaultMat)
+                {
+                    mat.color = new Color(mat.color.r, mat.color.g, mat.color.g, 1);
+                }
+            }
         }
 
         if (DitEneXrayMuurtje != null)
         {
             DitEneXrayMuurtje.GetComponent<Renderer>().materials = Mat;
+            DitEneVaultDeurtje.GetComponent<Renderer>().materials = VaultMat;
         }
     }
 }
