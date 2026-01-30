@@ -47,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AudioPlayerResource: 0
   equipMask: {fileID: 8300000, guid: 34486169720d9ad4fa951860ea3e6b51, type: 3}
+  interact: {fileID: 8300000, guid: 7fea6f09cced2cc42bc0d3756ffac292, type: 3}
 --- !u!82 &7993051658724369579
 AudioSource:
   m_ObjectHideFlags: 0
