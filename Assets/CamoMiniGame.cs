@@ -5,6 +5,9 @@ public class CamoMiniGame : MonoBehaviour
     [SerializeField] int amount = 0;
     [SerializeField] Animator anim;
     [SerializeField] GameObject canvas;
+
+    private MaskPickup parentScript;
+
     public enum Colorss
     {
         Green,
@@ -19,6 +22,7 @@ public class CamoMiniGame : MonoBehaviour
     private void Start()
     {
         camoColor = Colorss.Green;
+        parentScript = transform.parent.transform.parent.transform.GetComponentInParent<MaskPickup>();
     }
 
 
@@ -54,10 +58,11 @@ public class CamoMiniGame : MonoBehaviour
 
     public void UpdateCamoAmountRed()
     {
-        if( camoColor == Colorss.Red)
+        if(camoColor == Colorss.Red)
         {
             amount += 1;
-            //zet hier het canvas uit en zet aan dat je nu het masker hebt
+            parentScript.CollectMask();
+            MaskPickup.MinigamingIt = false;
             Destroy(canvas, 1f);
         }
         

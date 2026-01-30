@@ -15,7 +15,7 @@ public class CharacterCamera : MonoBehaviour
     void Update()
     {
         string activeSceneName = SceneManager.GetActiveScene().name;
-        if (Input.GetMouseButton(1) || activeSceneName != "Main")
+        if (Input.GetMouseButton(1) || activeSceneName != "Main" || MaskPickup.MinigamingIt)
         {
             Cursor.lockState = CursorLockMode.None;
         }
