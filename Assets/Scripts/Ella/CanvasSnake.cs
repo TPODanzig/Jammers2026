@@ -1,10 +1,12 @@
+using NUnit.Framework;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEngine.UI.Image;
 
 public class CanvasSnake : MonoBehaviour
 {
-    [SerializeField] private float _speed = 5f;
-    [SerializeField] private Rigidbody2D rb;
+    
     private Vector2 _moveInput;
     public int FoodAmount = 0;
 
@@ -19,6 +21,14 @@ public class CanvasSnake : MonoBehaviour
     private Vector2 _direction = Vector2.right;
     [SerializeField] RectTransform rect;
 
+    
+    List<Transform> _segments = new List<Transform>();
+
+    [SerializeField] private float gridSize = 32f;
+    public Transform segmentPrefab;
+
+    [SerializeField] Canvas c;
+
     enum Flipped
     {
         flipedRight,
@@ -29,8 +39,10 @@ public class CanvasSnake : MonoBehaviour
     Flipped flippedVAR = Flipped.flipedRight;
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
         parentScript = transform.parent.transform.parent.transform.GetComponentInParent<MaskPickup>();
+
+        _segments.Add(this.transform);
+
     }
     
     void Update()
@@ -90,8 +102,41 @@ public class CanvasSnake : MonoBehaviour
             Destroy(_snakeGame);
         }
     }
+
+
+
     private void FixedUpdate()
     {
-        this.transform.position = new Vector3(Mathf.Round(this.transform.position.x) + _direction.x, Mathf.Round(this.transform.position.y) + _direction.y, Mathf.Round(this.transform.position.z));
+
+        for (int i = _segments.Count - 1; i > 0; i--)
+        {
+            _segments[i].position = _segments[i - 1].position;
+        }
+        Vector2 pos = rect.anchoredPosition;
+        pos += _direction * gridSize;
+        rect.anchoredPosition = pos;
+
+    }
+
+    private void Grow()
+    {
+        for ( int i = 0; i <6; i++)
+        {
+            Transform segment = Instantiate(segmentPrefab, c.transform);
+            segment.position = _segments[_segments.Count - 1].position;
+            _segments.Add(segment);
+        }
+        //Transform segment = Instantiate(segmentPrefab, c.transform);
+        //segment.position = _segments[_segments.Count - 1].position;
+        //_segments.Add(segment);
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Food")
+        {
+            Grow();
+        }
     }
 }
