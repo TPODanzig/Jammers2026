@@ -76,21 +76,21 @@ public class MaskPickup : MonoBehaviour
 
     public void CollectMask()
     {
-        if (PlayerMaskManager.SMaskAmount == 0)
-        {
-            GenerateText.generateText.sentence = "You got the blacklight mask! With this you can see things invisible to the naked eye!";
-        }
-        else if (PlayerMaskManager.SMaskAmount == 1)
-        {
-            GenerateText.generateText.sentence = "You got the camouflage mask! No camera will be able to spot you with this!";
-        }
-        else
-        {
-            GenerateText.generateText.sentence = "You got the XRay mask! You can now see what's behind certain walls, you should find the safe!";
-        }
-        GenerateText.generateText.gameObject.SetActive(true);
-        GenerateText.generateText.upTimer = 7;
-        GenerateText.generateText.StartLetters();
+        //if (PlayerMaskManager.SMaskAmount == 0)
+        //{
+        //    GenerateText.generateText.sentence = "You got the blacklight mask! With this you can see things invisible to the naked eye!";
+        //}
+        //else if (PlayerMaskManager.SMaskAmount == 1)
+        //{
+        //    GenerateText.generateText.sentence = "You got the camouflage mask! No camera will be able to spot you with this!";
+        //}
+        //else
+        //{
+        //    GenerateText.generateText.sentence = "You got the XRay mask! You can now see what's behind certain walls, you should find the safe!";
+        //}
+        //GenerateText.generateText.gameObject.SetActive(true);
+        //GenerateText.generateText.upTimer = 7;
+        //GenerateText.generateText.StartLetters();
         Timer.countDown += 60;
         PlayerMaskManager.SMaskAmount++;
         Destroy(this.gameObject);
