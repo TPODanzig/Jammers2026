@@ -91,7 +91,7 @@ public class MaskPickup : MonoBehaviour
         GenerateText.generateText.gameObject.SetActive(true);
         GenerateText.generateText.upTimer = 7;
         GenerateText.generateText.StartLetters();
-        Timer.countDown += 30;
+        Timer.countDown += 60;
         PlayerMaskManager.SMaskAmount++;
         Destroy(this.gameObject);
     }
