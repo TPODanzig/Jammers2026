@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEditor.PlayerSettings;
-using static UnityEngine.UI.Image;
+
 
 public class CanvasSnake : MonoBehaviour
 {

@@ -1,25 +1,37 @@
 using UnityEngine;
+using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
+
 
 public class Togglelore : MonoBehaviour
 {
     public int counter = 0;
     public GameObject text;
+    public float timer;
 
-    private void OnTriggerStay(Collider other)
+    private void FixedUpdate()
     {
-        if (other.CompareTag("Player"))
+        timer -= Time.deltaTime;
+        if (counter > 1)
+
+            if (counter > 1)
+            {
+                counter = 0;
+            }
+    }
+    public void kurkboard()
+    {
+        if (counter == 0 && timer <= 0)
         {
             text.SetActive(true);
+            counter++;
         }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
+        else if (counter == 1 && timer <= 0)
         {
             text.SetActive(false);
+            counter++;
         }
     }
-
 }
+
+ 
 

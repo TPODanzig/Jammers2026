@@ -33,7 +33,7 @@ public class InteractionScript : MonoBehaviour
         if (other.gameObject.CompareTag("Interactable"))
         {
             InteractionText.SetActive(true);
-            if (Input.GetKeyDown("e"))
+            if (Input.GetKey("e"))
             {
                 //Speel audio
                 ActiveAPlayer = Instantiate(aPlayer);
@@ -52,6 +52,14 @@ public class InteractionScript : MonoBehaviour
                 else if (other.gameObject == vaultDeur)
                 {
                     SceneManager.LoadScene("Win Scene");
+                }
+                 else if (other.GetComponent<Togglelore>() != null)
+                {
+                    if (other.GetComponent<Togglelore>().timer <= 0f)
+                    {
+                        other.GetComponent<Togglelore>().kurkboard();
+                        other.GetComponent<Togglelore>().timer = 1f;
+                    }
                 }
                 else if (PlayerMaskManager.SWearingMask &&
                 PlayerMaskManager.SActiveMask == PlayerMaskManager.ActiveMask.XRay)
