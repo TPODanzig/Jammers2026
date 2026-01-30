@@ -7,6 +7,8 @@ TagManager:
   - CheckPoint
   - Food
   - Interactable
+  - Wall
+  - Light
   layers:
   - Default
   - TransparentFX
