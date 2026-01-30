@@ -32,9 +32,9 @@ public class PlayerMaskManager : MonoBehaviour
     private GameObject ActiveAPlayer;
     private AudioPlayer ActiveAPlayerComp;
 
-    [SerializeField] RawImage MaskIcon1;
-    [SerializeField] RawImage MaskIcon2;
-    [SerializeField] RawImage MaskIcon3;
+    [SerializeField] Image MaskIcon1;
+    [SerializeField] Image MaskIcon2;
+    [SerializeField] Image MaskIcon3;
 
     private void Start()
     {
