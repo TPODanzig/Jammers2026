@@ -32,14 +32,17 @@ public class InteractionScript : MonoBehaviour
         if (other.gameObject.CompareTag("Interactable"))
         {
             InteractionText.SetActive(true);
-            if (Input.GetKey("e"))
+            if (Input.GetKeyDown("e"))
             {
                 //Speel audio
                 ActiveAPlayer = Instantiate(aPlayer);
                 ActiveAPlayerComp = ActiveAPlayer.GetComponent<AudioPlayer>();
                 ActiveAPlayerComp.AudioPlayerResource = AudioPlayer.AudioResource.Interact;
 
-
+                if (other.GetComponent<Togglelore>())
+                {
+                    other.GetComponent<Togglelore>().kurkboard();
+                }
                 if (other.GetComponent<Door>() != null)
                 {
                     other.GetComponent<Door>().OpenDoor();
