@@ -6,11 +6,13 @@ public class AudioPlayer : MonoBehaviour
     public enum AudioResource
     {
         NULL,
-        EquipMask
+        EquipMask,
+        Interact
     }
     public AudioResource AudioPlayerResource;
 
     [SerializeField] private AudioClip equipMask;
+    [SerializeField] private AudioClip interact;
 
     private AudioSource aPlayer;
 
@@ -42,6 +44,10 @@ public class AudioPlayer : MonoBehaviour
             if (AudioPlayerResource == AudioResource.EquipMask)
             {
                 aPlayer.clip = equipMask;
+            }
+            else if (AudioPlayerResource == AudioResource.Interact)
+            {
+                aPlayer.clip = interact;
             }
         }
 
