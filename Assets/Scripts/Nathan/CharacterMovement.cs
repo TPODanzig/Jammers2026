@@ -33,7 +33,7 @@ public class CharacterMovement : MonoBehaviour
             cc.Move(velocity * Time.deltaTime);
         }
 
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+        if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D)) && !MaskPickup.MinigamingIt)
         {
             walking = true;
         }
