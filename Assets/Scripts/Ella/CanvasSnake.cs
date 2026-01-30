@@ -1,7 +1,9 @@
 using NUnit.Framework;
 using System.Collections.Generic;
+using System.Drawing;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.PlayerSettings;
 using static UnityEngine.UI.Image;
 
 public class CanvasSnake : MonoBehaviour
@@ -25,18 +27,9 @@ public class CanvasSnake : MonoBehaviour
     List<Transform> _segments = new List<Transform>();
 
     [SerializeField] private float gridSize = 32f;
-    public Transform segmentPrefab;
+    public GameObject segmentPrefab;
 
     [SerializeField] Canvas c;
-
-    enum Flipped
-    {
-        flipedRight,
-        flippedLeft,
-        flippedUp,
-        flippedDown
-    }
-    Flipped flippedVAR = Flipped.flipedRight;
     void Start()
     {
         parentScript = transform.parent.transform.parent.transform.GetComponentInParent<MaskPickup>();
@@ -52,49 +45,20 @@ public class CanvasSnake : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W)) 
         { 
             _direction = Vector2.up;
-            flippedVAR = Flipped.flippedUp;
         }
         else if (Input.GetKeyDown(KeyCode.S))
         { 
             _direction = Vector2.down;
-            flippedVAR = Flipped.flippedDown;
         }
         else if (Input.GetKeyDown(KeyCode.A))
         {
             _direction = Vector2.left;
-            flippedVAR = Flipped.flippedLeft;
         }
         else if (Input.GetKeyDown(KeyCode.D))
         { 
             _direction = Vector2.right;
-            flippedVAR = Flipped.flipedRight;
 
         }
-
-
-        if (flippedVAR == Flipped.flipedRight)
-        {
-            spriteshit.sprite = sideways;
-            this.gameObject.transform.localScale = new Vector3(-0.5f, 0.5f, 0.5f);
-        }
-        else if (flippedVAR == Flipped.flippedLeft)
-        {
-            spriteshit.sprite = sideways;
-            this.gameObject.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
-        }
-        else if (flippedVAR == Flipped.flippedUp)
-        {
-            spriteshit.sprite = UpAndDown;
-            this.gameObject.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
-        }
-        else if (flippedVAR == Flipped.flippedDown)
-        {
-            spriteshit.sprite = UpAndDown;
-            this.gameObject.transform.localScale = new Vector3(0.5f, -0.5f, 0.5f);
-        }
-
-        
-
         if (FoodAmount >= 5)
         {
             parentScript.CollectMask();
@@ -122,13 +86,13 @@ public class CanvasSnake : MonoBehaviour
     {
         for ( int i = 0; i <6; i++)
         {
-            Transform segment = Instantiate(segmentPrefab, c.transform);
-            segment.position = _segments[_segments.Count - 1].position;
+            Transform segment = Instantiate(segmentPrefab.transform, c.transform);
+            segment.transform.position = _segments[_segments.Count - 1].position;
+            
             _segments.Add(segment);
+            
         }
-        //Transform segment = Instantiate(segmentPrefab, c.transform);
-        //segment.position = _segments[_segments.Count - 1].position;
-        //_segments.Add(segment);
+        
 
     }
 
@@ -137,6 +101,12 @@ public class CanvasSnake : MonoBehaviour
         if (collision.tag == "Food")
         {
             Grow();
+        }
+
+        if(collision.tag == "Wall")
+        {
+            Debug.Log("you hit a wall");
+            rect.anchoredPosition = new Vector2(0f, 0f);
         }
     }
 }
