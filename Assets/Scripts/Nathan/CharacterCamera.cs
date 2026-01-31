@@ -1,6 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class CharacterCamera : MonoBehaviour
 {
@@ -13,8 +14,8 @@ public class CharacterCamera : MonoBehaviour
 
     void Update()
     {
-
-        if (Input.GetMouseButton(1))
+        string activeSceneName = SceneManager.GetActiveScene().name;
+        if (activeSceneName != "Main" || MaskPickup.MinigamingIt)
         {
             Cursor.lockState = CursorLockMode.None;
         }

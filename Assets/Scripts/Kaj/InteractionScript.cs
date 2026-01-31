@@ -1,7 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using static UnityEditor.Experimental.GraphView.GraphView;
+using UnityEngine.SceneManagement;
 
 public class InteractionScript : MonoBehaviour
 {
@@ -20,12 +19,13 @@ public class InteractionScript : MonoBehaviour
         InteractionText.SetActive(false);
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
             if (MaskPickup.MinigamingIt)
         {
             InteractionText.SetActive(false);
         }
+        dabidoo();
     }
 
     void OnTriggerStay(Collider other)
@@ -40,7 +40,7 @@ public class InteractionScript : MonoBehaviour
                 ActiveAPlayerComp = ActiveAPlayer.GetComponent<AudioPlayer>();
                 ActiveAPlayerComp.AudioPlayerResource = AudioPlayer.AudioResource.Interact;
 
-
+                
                 if (other.GetComponent<Door>() != null)
                 {
                     other.GetComponent<Door>().OpenDoor();
@@ -51,7 +51,15 @@ public class InteractionScript : MonoBehaviour
                 }
                 else if (other.gameObject == vaultDeur)
                 {
-                    Debug.Log("Game win");
+                    SceneManager.LoadScene("Win Scene");
+                }
+                 else if (other.GetComponent<Togglelore>() != null)
+                {
+                    if (other.GetComponent<Togglelore>().timer <= 0f)
+                    {
+                        other.GetComponent<Togglelore>().kurkboard();
+                        other.GetComponent<Togglelore>().timer = 1f;
+                    }
                 }
                 else if (PlayerMaskManager.SWearingMask &&
                 PlayerMaskManager.SActiveMask == PlayerMaskManager.ActiveMask.XRay)
@@ -68,7 +76,7 @@ public class InteractionScript : MonoBehaviour
         InteractionText.SetActive(false);
     }
 
-    private void FixedUpdate()
+    void dabidoo()
     {
         InteractionText.SetActive(false);
     }

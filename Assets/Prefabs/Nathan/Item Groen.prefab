@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1633294367237193554}
   - component: {fileID: 5733136668961773678}
   - component: {fileID: 708788676586113740}
+  - component: {fileID: 3229585558150371857}
   m_Layer: 5
   m_Name: Item Groen
   m_TagString: Untagged
@@ -36,7 +37,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 250, y: 250}
+  m_SizeDelta: {x: 5, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1633294367237193554
 CanvasRenderer:
@@ -120,3 +121,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &3229585558150371857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4334860790441243817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32625229b13d5c943a28e15fbae98423, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorID: 0
+  button: {fileID: 708788676586113740}

@@ -1,9 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
-using UnityEditor.Rendering;
+
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GenerateText : MonoBehaviour
 {
@@ -13,6 +13,8 @@ public class GenerateText : MonoBehaviour
     public string sentence;
     public float upTimer;
     private Queue<string> queue;
+
+    
 
     private void Awake()
     {

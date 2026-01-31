@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -32,17 +33,32 @@ public class PlayerMaskManager : MonoBehaviour
     private GameObject ActiveAPlayer;
     private AudioPlayer ActiveAPlayerComp;
 
+    [SerializeField] Image MaskIcon1;
+    [SerializeField] Image MaskIcon2;
+    [SerializeField] Image MaskIcon3;
+
+    [SerializeField] TMP_Text Icon1Text;
+    [SerializeField] TMP_Text Icon2Text;
+    [SerializeField] TMP_Text Icon3Text;
+
+    [SerializeField] RawImage EquipIcon;
+
     private void Start()
     {
         activeBlacklightScript = GetComponent<BlackLighteffect>();
         activeDisguiseScript = GetComponent<CamoMask>();
         activeXRayScript = GetComponent<XrayScript>();
+
+        SWearingMask = false;
+        SActiveMask = ActiveMask.None;
+        SMaskAmount = 0;
     }
 
     private void Update()
     {
         RunDebug();
         RunMasks();
+        RunIcons();
 
         //check of je 1,2,3 of L mouse klikt
         if (Input.GetKey("1") && SMaskAmount >= 1 && SActiveMask != ActiveMask.BlackLight)
@@ -50,12 +66,10 @@ public class PlayerMaskManager : MonoBehaviour
             if (SWearingMask)
             {
                 inputActive = true;
-                //going to wear mask 1
             }
             else
             {
                 SActiveMask = ActiveMask.BlackLight;
-                //wearin mask 1
             }
         }
         else if (Input.GetKey("2") && SMaskAmount >= 2 && SActiveMask != ActiveMask.Disguise)
@@ -63,12 +77,10 @@ public class PlayerMaskManager : MonoBehaviour
             if (SWearingMask)
             {
                 inputActive = true;
-                //going to wear mask 2
             }
             else
             {
                 SActiveMask = ActiveMask.Disguise;
-                //wearin mask 2
             }
         }
         else if (Input.GetKey("3") && SMaskAmount >= 3 && SActiveMask != ActiveMask.XRay)
@@ -76,19 +88,16 @@ public class PlayerMaskManager : MonoBehaviour
             if (SWearingMask)
             {
                 inputActive = true;
-                //going to wear mask 3
             }
             else
             {
                 SActiveMask = ActiveMask.XRay;
-                //wearin mask 3
             }
         }
 
         else if (Input.GetKey(KeyCode.G) && SActiveMask != ActiveMask.None)
         {
             inputActive = true;
-            //wearing / unwearing mask
         }
 
         else //reset mask lock en de imput bool als je niks aanklikt
@@ -194,6 +203,91 @@ public class PlayerMaskManager : MonoBehaviour
             activeBlacklightScript.BLMaskActive = false;
             activeDisguiseScript.CamoMaskOn = false;
             activeXRayScript.XrayActive = false;
+        }
+    }
+
+    void RunIcons()
+    {
+        if (SMaskAmount >= 3)
+        {
+            MaskIcon3.gameObject.SetActive(true);
+            MaskIcon2.gameObject.SetActive(true);
+            MaskIcon1.gameObject.SetActive(true);
+        }
+        if (SMaskAmount < 3)
+        {
+            MaskIcon3.gameObject.SetActive(false);
+
+            MaskIcon2.gameObject.SetActive(true);
+            MaskIcon1.gameObject.SetActive(true);
+        }
+        if (SMaskAmount < 2)
+        {
+            MaskIcon3.gameObject.SetActive(false);
+            MaskIcon2.gameObject.SetActive(false);
+
+            MaskIcon1.gameObject.SetActive(true);
+        }
+        if (SMaskAmount < 1)
+        {
+            MaskIcon3.gameObject.SetActive(false);
+            MaskIcon2.gameObject.SetActive(false);
+            MaskIcon1.gameObject.SetActive(false);
+            EquipIcon.gameObject.SetActive(false);
+        }
+        else
+        {
+            EquipIcon.gameObject.SetActive(true);
+        }
+
+        if (SActiveMask == ActiveMask.None)
+        {
+            MaskIcon1.color = Color.black;
+            MaskIcon2.color = Color.black;
+            MaskIcon3.color = Color.black;
+        }
+        else if (SActiveMask == ActiveMask.BlackLight)
+        {
+            MaskIcon1.color = Color.white;
+            MaskIcon2.color = Color.black;
+            MaskIcon3.color = Color.black;
+        }
+        else if (SActiveMask == ActiveMask.Disguise)
+        {
+            MaskIcon1.color = Color.black;
+            MaskIcon2.color = Color.white;
+            MaskIcon3.color = Color.black;
+        }
+        else if (SActiveMask == ActiveMask.XRay)
+        {
+            MaskIcon1.color = Color.black;
+            MaskIcon2.color = Color.black;
+            MaskIcon3.color = Color.white;
+        }
+
+        if (SActiveMask == ActiveMask.None)
+        {
+            Icon1Text.gameObject.SetActive(false);
+            Icon2Text.gameObject.SetActive(false);
+            Icon3Text.gameObject.SetActive(false);
+        }
+        else if (SActiveMask == ActiveMask.BlackLight)
+        {
+            Icon1Text.gameObject.SetActive(true);
+            Icon2Text.gameObject.SetActive(false);
+            Icon3Text.gameObject.SetActive(false);
+        }
+        else if (SActiveMask == ActiveMask.Disguise)
+        {
+            Icon1Text.gameObject.SetActive(false);
+            Icon2Text.gameObject.SetActive(true);
+            Icon3Text.gameObject.SetActive(false);
+        }
+        else if (SActiveMask == ActiveMask.XRay)
+        {
+            Icon1Text.gameObject.SetActive(false);
+            Icon2Text.gameObject.SetActive(false);
+            Icon3Text.gameObject.SetActive(true);
         }
     }
 
